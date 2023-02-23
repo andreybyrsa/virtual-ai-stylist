@@ -1,5 +1,21 @@
 {
   "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@Components/*": ["src/components/*"],
+      "@Assets/*": ["src/assets/*"],
+      "@Hooks/*": ["src/hooks/*"],
+      "@Utils/*": ["src/utils/*"],
+      "@Constants/*": ["src/constants/*"],
+      "@Layouts/*": ["src/layouts/*"],
+      "@Pages/*": ["src/pages/*"],
+      "@Domain/*": ["src/domain/*"],
+      "@Application/*": ["src/application/*"],
+      "@Services/*": ["src/services/*"],
+      "@Types/*": ["src/types/*"],
+      "@Store/*": ["src/store/*"],
+      "@UIkit/*": ["src/UIkit/*"]
+    },
     "target": "es5",
     "lib": [
       "dom",
@@ -20,7 +36,5 @@
     "noEmit": true,
     "jsx": "react-jsx"
   },
-  "include": [
-    "src"
-  ]
+  "include": ["src", "src/custom.d.ts"]
 }
