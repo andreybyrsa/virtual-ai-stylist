@@ -1,0 +1,34 @@
+{
+  "trailingComma": "all",
+  "tabWidth": 2,
+  "printWidth": 100,
+  "semi": false,
+
+  "singleQuote": true,
+  "quoteProps": "as-needed",
+  "jsxSingleQuote": false,
+
+  "bracketSpacing": true,
+  "proseWrap": "always",
+  "singleAttributePerLine": true,
+  "endOfLine": "auto",
+
+  "importOrder": [
+    "^@Components/(.*)$",
+    "^@UIkit/(.*)$",
+    "^@Assets/(.*)$",
+    "^@Hooks/(.*)$",
+    "^@Utils/(.*)$",
+    "^@Constants/(.*)$",
+    "^@Layouts/(.*)$",
+    "^@Pages/(.*)$",
+    "^@Domain/(.*)$",
+    "^@Application/(.*)$",
+    "^@Services/(.*)$",
+    "^@Store/(.*)$",
+    "^@Types/(.*)$",
+    "^[./]"
+  ],
+  "importOrderSeparation": true,
+  "importOrderSortSpecifiers": true
+}
