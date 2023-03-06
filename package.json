@@ -13,7 +13,7 @@
     "@types/react": "^18.0.28",
     "@types/react-dom": "^18.0.11",
     "classnames": "^2.3.2",
-    "node-sass": "^8.0.0",
+    "node-sass": "^7.0.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-redux": "^8.0.5",
@@ -24,6 +24,8 @@
   "scripts": {
     "start": "craco start",
     "build": "craco build",
+    "sass:colors": "typed-scss-modules src/assets/styles/colors/'*.scss' --nameFormat none --exportType default --exportTypeName ColorNames --exportTypeInterface Colors",
+    "sass:typography": "typed-scss-modules src/assets/styles/typography/'*.scss' --nameFormat none --exportType default --exportTypeName TypographyVariants --exportTypeInterface Typography",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -60,6 +62,7 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "prettier": "^2.7.1",
     "prettier-plugin-organize-imports": "^3.2.0",
-    "sass": "^1.57.1"
+    "sass": "^1.57.1",
+    "typed-scss-modules": "^7.0.2"
   }
 }
