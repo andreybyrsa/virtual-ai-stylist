@@ -1,5 +1,5 @@
-import { ColorNamesTypes } from '@Components/styles/Colors.types'
-import { TypographyVariantsTypes } from '@Components/styles/Typography.types'
+import { ColorNamesTypes } from '@Types/Colors.types'
+import { TypographyVariantsTypes } from '@Types/Typography.types'
 
 interface TypographyProps {
   className?: string
