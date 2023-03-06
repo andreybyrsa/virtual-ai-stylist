@@ -1,0 +1,7 @@
+@import "./colors";
+
+:export {
+  @each $name, $color in $colors {
+    #{$name}: $color;
+  }
+}

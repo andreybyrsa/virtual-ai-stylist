@@ -1,7 +1,16 @@
+@import "./assets/styles/main";
+
+:root {
+  @each $name, $color in $colors {
+    --#{$name}: #{$color};
+  }
+}
+
 * {
   margin: 0;
   padding: 0;
   border: 0;
+  font-family: Montserrat sans-serif;
 }
 
 *,
@@ -12,9 +21,7 @@
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-  'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-  sans-serif;
+  background-color: color(color-background-primary);
 
   &.overflow {
     max-width: 100vw;

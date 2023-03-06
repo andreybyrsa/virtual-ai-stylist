@@ -1,0 +1,10 @@
+@import "typography";
+
+// Когда добавляешь новую типографию - запускай скрипт в консоли npm run sass:typography
+// Паттерн для значения ключа в обьекте: ("fs": ...px, "fw": ..., "ln": ...px)
+
+:export {
+  @each $variant, $styles in $typography {
+    #{$variant}: map-get($styles, "fs"), map-get($styles, "fw"), map-get($styles, "ln");
+  }
+}
