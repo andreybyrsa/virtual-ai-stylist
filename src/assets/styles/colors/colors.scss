@@ -1,0 +1,35 @@
+// Когда добавляешь новый цвет - запускай скрипт в консоли npm run sass:colors
+// Паттерн для добавления цвета в объект: color-компонент-название_модификатор
+
+$colors: (
+  //? Text colors
+  "color-text-primary": #02202B,
+  "color-text-secondary": #00E4FF,
+  "color-text-tertiary": #FFFFFF,
+  "color-text-error": #FF0000,
+
+  //? Icon colors
+  "color-icon-primary": #FFFFFF,
+  "color-icon-secondary": #02202B,
+  "color-icon-tertiary": #00E4FF,
+  "color-icon-correct": #2E994B,
+
+  //? Button colors
+  "color-button-enable": #264A5A,
+  "color-button-active": #02202B,
+  "color-button-disable": #7496A6,
+
+  //? Input colors
+  "color-input-enable": #8AA7BB,
+  "color-input-error": #FF0000,
+
+  //? TextArea colors
+  "color-textarea-primary": #5F8393,
+
+  //? Image colors
+  "color-image-primary": #A5B0B7,
+
+  //? Background colors
+  "color-background-primary": #C3CFD7,
+  "color-background-tertiary": #FFFFFF,
+);

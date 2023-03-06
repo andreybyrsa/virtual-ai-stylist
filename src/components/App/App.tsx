@@ -1,7 +1,6 @@
 import './App.scss'
 
 function App() {
-  return <div></div>
+  return <div className="App">123</div>
 }
-
 export default App
