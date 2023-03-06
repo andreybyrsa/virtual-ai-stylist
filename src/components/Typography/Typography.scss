@@ -1,0 +1,10 @@
+@import "./src/assets/styles/typography/typography";
+
+.typography {
+
+  @each $variant, $styles in $typography {
+    &--#{$variant} {
+      @include typography(map-get($styles, "fs"), map-get($styles, "fw"), map-get($styles, "ln"));
+    }
+  }
+}
