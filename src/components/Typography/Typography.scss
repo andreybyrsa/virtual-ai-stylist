@@ -1,6 +1,7 @@
 @import "./src/assets/styles/typography/typography";
 
 .typography {
+  color(color-text-primary);
 
   @each $variant, $styles in $typography {
     &--#{$variant} {
