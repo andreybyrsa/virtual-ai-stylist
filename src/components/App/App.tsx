@@ -1,8 +1,7 @@
 import './App.scss'
 
 function App() {
-  console.log(123)
-  return <div>123</div>
+  return <div></div>
 }
 
 export default App
