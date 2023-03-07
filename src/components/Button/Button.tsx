@@ -22,7 +22,12 @@ function Button({ className, type, disabled = false, children = 'Кнопка', 
       disabled={disabled}
       type="button"
     >
-      <Typography className="button__text">{children}</Typography>
+      <Typography
+        variant="text-t5-medium"
+        className="button__text"
+      >
+        {children}
+      </Typography>
     </button>
   )
 }
