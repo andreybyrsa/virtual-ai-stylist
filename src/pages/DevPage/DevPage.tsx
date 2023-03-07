@@ -1,3 +1,4 @@
+import Button from '@Components/Button'
 import Icon from '@Components/Icon'
 import Typography from '@Components/Typography'
 
@@ -11,6 +12,16 @@ function DevPage() {
         iconName="check"
         color="color-icon-correct"
         size={40}
+      />
+      <Button type="primary" />
+      <Button type="secondary" />
+      <Button
+        disabled
+        type="primary"
+      />
+      <Button
+        disabled
+        type="secondary"
       />
     </PageLayout>
   )

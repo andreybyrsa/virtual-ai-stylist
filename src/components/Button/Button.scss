@@ -37,4 +37,17 @@
       }
     }
   }
+
+  &--disabled.button--primary{
+    background: color(color-button-primary_disable);
+  }
+
+  &--disabled.button--secondary{
+    background: color(color-button-secondary_disable);
+    @include border(solid, color(color-border-secondary_enable), 10px, 2px);
+
+    .button__text{
+      color: color(color-text-secondary);
+    }
+  }
 }
