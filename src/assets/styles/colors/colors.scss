@@ -15,9 +15,18 @@ $colors: (
   "color-icon-correct": #2E994B,
 
   //? Button colors
-  "color-button-enable": #264A5A,
-  "color-button-active": #02202B,
-  "color-button-disable": #7496A6,
+  "color-button-primary_enable": #264A5A,
+  "color-button-primary_active": #02202B,
+  "color-button-primary_disable": #7496A6,
+
+  "color-button-secondary_enable": #02202B,
+  "color-button-secondary_active": #FFFFFF,
+  "color-button-secondary_disable": #7496A6,
+
+  //? Border colors
+  "color-border-secondary_enable": #00E4FF,
+  "color-border-secondary_active": #02202B,
+  "color-border-secondary_disable": #00E4FF,
 
   //? Input colors
   "color-input-primary": #8AA7BB,
