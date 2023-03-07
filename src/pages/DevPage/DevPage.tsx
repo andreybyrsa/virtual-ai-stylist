@@ -1,5 +1,6 @@
 import Button from '@Components/Button'
 import Icon from '@Components/Icon'
+import IconButton from '@Components/IconButton'
 import Typography from '@Components/Typography'
 
 import PageLayout from '@Layouts/PageLayout'
@@ -23,6 +24,7 @@ function DevPage() {
         disabled
         type="secondary"
       />
+      <IconButton type="primary" />
     </PageLayout>
   )
 }
