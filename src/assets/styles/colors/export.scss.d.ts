@@ -10,7 +10,8 @@ export type Colors = {
   'color-icon-tertiary': string
   'color-image-primary': string
   'color-input-enable': string
-  'color-input-error': string
+  'color-input-primary': string
+  'color-input-primary_error': string
   'color-text-error': string
   'color-text-primary': string
   'color-text-secondary': string

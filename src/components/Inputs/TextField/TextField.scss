@@ -1,0 +1,18 @@
+.input {
+  &-text {
+    padding: 0 10px 10px;
+  }
+
+  width: 100%;
+  @include fixedHeight(44px);
+  padding: 0 20px;
+  background-color: color(color-input-primary);
+  @include border($border-radius: 8px);
+
+  @include typography(20px, 400, 18px);
+
+  &::placeholder {
+    color: color(color-text-primary);
+    @include typography(20px, 400, 18px);
+  }
+}
