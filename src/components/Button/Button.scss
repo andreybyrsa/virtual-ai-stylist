@@ -1,0 +1,53 @@
+.button {
+  width: 100%;
+  @include fixedHeight(48px);
+  background-color: #264A5A;
+  border-radius: 10px;
+
+  &--primary{
+    background-color: color(color-button-primary_enable);
+
+    .button__text{
+      color: color(color-text-tertiary);
+    }
+
+    transition: all .2s ease-out;
+
+    &:active {
+      background-color: color(color-button-primary_active);
+    }
+  }
+
+  &--secondary{
+    background-color: color(color-button-secondary_enable);
+    @include border(solid, color(color-border-secondary_enable), 10px, 2px);
+
+    .button__text{
+      color: color(color-text-secondary);
+    }
+
+    transition: all .2s ease-out;
+
+    &:active {
+      background-color: color(color-button-secondary_active);
+      @include border(solid, color(color-border-secondary_active), 10px, 2px);
+
+      .button__text{
+        color: color(color-text-primary);
+      }
+    }
+  }
+
+  &--disabled.button--primary{
+    background: color(color-button-primary_disable);
+  }
+
+  &--disabled.button--secondary{
+    background: color(color-button-secondary_disable);
+    @include border(solid, color(color-border-secondary_enable), 10px, 2px);
+
+    .button__text{
+      color: color(color-text-secondary);
+    }
+  }
+}
