@@ -1,5 +1,7 @@
 import classNames from 'classnames'
 
+import Typography from '@Components/Typography'
+
 import './Button.scss'
 import ButtonProps from './Button.types'
 
@@ -17,7 +19,7 @@ function Button({
       onClick={onClick}
       type="button"
     >
-      {children}
+      <Typography>{children}</Typography>
     </button>
   )
 }
