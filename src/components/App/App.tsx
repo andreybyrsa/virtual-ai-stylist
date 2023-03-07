@@ -1,3 +1,4 @@
+import Icon from '@Components/Icon'
 import Typography from '@Components/Typography'
 
 import './App.scss'
@@ -11,6 +12,11 @@ function App() {
       >
         Typography
       </Typography>
+      <Icon
+        iconName="check"
+        color="color-icon-correct"
+        size={50}
+      />
     </div>
   )
 }
