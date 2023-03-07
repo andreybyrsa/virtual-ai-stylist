@@ -17,6 +17,7 @@ function PageLayout({
   const PageLayoutHeaderClassName = classNames('page-layout__header', headerClassName)
   const PageLayoutContentClassName = classNames('page-layout__content', contentClassName)
   const PageLayoutFooterClassName = classNames('page-layout__footer', footerClassName)
+
   return (
     <div className={PageLayoutClassName}>
       <div className={PageLayoutHeaderClassName}>{header}</div>
