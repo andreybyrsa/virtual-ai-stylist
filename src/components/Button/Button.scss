@@ -1,14 +1,40 @@
 .button {
   width: 100%;
-  height: 48px;
+  @include fixedHeight(48px);
   background-color: #264A5A;
   border-radius: 10px;
 
-  color: #FFFFFF;
+  &--primary{
+    background-color: color(color-button-primary_enable);
 
-  transition: all .2s ease-out;
+    .button__text{
+      color: color(color-text-tertiary);
+    }
 
-  &:active {
-    background-color: #02202B;
+    transition: all .2s ease-out;
+
+    &:active {
+      background-color: color(color-button-primary_active);
+    }
+  }
+
+  &--secondary{
+    background-color: color(color-button-secondary_enable);
+    @include border(solid, color(color-border-secondary_enable), 10px, 2px);
+
+    .button__text{
+      color: color(color-text-secondary);
+    }
+
+    transition: all .2s ease-out;
+
+    &:active {
+      background-color: color(color-button-secondary_active);
+      @include border(solid, color(color-border-secondary_active), 10px, 2px);
+
+      .button__text{
+        color: color(color-text-primary);
+      }
+    }
   }
 }

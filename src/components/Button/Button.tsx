@@ -7,11 +7,12 @@ import ButtonProps from './Button.types'
 
 function Button({
   className,
+  type = 'primary',
 
   children = 'Кнопка',
   onClick,
 }: ButtonProps) {
-  const ButtonClassName = classNames('button', className)
+  const ButtonClassName = classNames('button', `button--${type}`, className)
 
   return (
     <button
@@ -19,7 +20,7 @@ function Button({
       onClick={onClick}
       type="button"
     >
-      <Typography>{children}</Typography>
+      <Typography className="button__text">{children}</Typography>
     </button>
   )
 }
