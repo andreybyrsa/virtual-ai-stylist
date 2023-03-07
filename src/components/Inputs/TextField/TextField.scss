@@ -1,4 +1,8 @@
 .input {
+  &-wrapper {
+    width: 100%;
+  }
+
   &-text {
     padding: 0 10px 10px;
   }
@@ -14,5 +18,14 @@
   &::placeholder {
     color: color(color-text-primary);
     @include typography(20px, 400, 18px);
+  }
+
+  &--required {
+    background-color: color(color-input-primary_error);
+    @include border(solid, color(color-border-primary_error), 8px, 1px);
+
+    &::placeholder {
+      color: color(color-text-error);
+    }
   }
 }

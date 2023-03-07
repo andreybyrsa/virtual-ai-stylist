@@ -1,5 +1,5 @@
 import classNames from 'classnames'
-import { ChangeEvent } from 'react'
+import { ChangeEvent, useEffect, useState } from 'react'
 
 import Typography from '@Components/Typography'
 
@@ -16,10 +16,12 @@ function TextField({
   placeholder = 'Введите текст',
   required,
 }: TextFieldProps) {
+  const [isRequired, setIsRequired] = useState<boolean>(!!required)
+
   const TextFieldClassName = classNames(
     'input',
     {
-      'input--required': required,
+      'input--required': isRequired,
     },
     className,
   )
@@ -29,6 +31,14 @@ function TextField({
       setValue(event.target.value)
     }
   }
+
+  useEffect(() => {
+    if (!value && required) {
+      setIsRequired(true)
+    } else {
+      setIsRequired(false)
+    }
+  }, [required, value])
 
   return (
     <div className="input-wrapper">

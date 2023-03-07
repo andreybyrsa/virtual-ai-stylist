@@ -7,6 +7,7 @@ export type Colors = {
   'color-button-secondary_active': string
   'color-button-secondary_disable': string
   'color-button-secondary_enable': string
+  'color-border-primary_error': string
   'color-border-secondary_enable': string
   'color-border-secondary_active': string
   'color-border-secondary_disable': string
