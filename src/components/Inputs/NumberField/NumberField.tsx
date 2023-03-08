@@ -57,7 +57,7 @@ function NumberField({
         <input
           className="number-field__input"
           placeholder={placeholder}
-          type=""
+          type="text"
           {...register('numberField', {
             required: !!required,
             pattern: /^[0-9]+$/,
