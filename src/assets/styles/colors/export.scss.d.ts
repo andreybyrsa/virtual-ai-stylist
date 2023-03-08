@@ -10,6 +10,7 @@ export type Colors = {
   'color-border-secondary_enable': string
   'color-border-secondary_active': string
   'color-border-secondary_disable': string
+  'color-icon-error': string
   'color-icon-correct': string
   'color-icon-primary': string
   'color-icon-secondary': string
