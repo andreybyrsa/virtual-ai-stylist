@@ -5,13 +5,21 @@ import PhoneField from '@Components/Inputs/PhoneField'
 import TextField from '@Components/Inputs/TextField'
 import Typography from '@Components/Typography'
 
+import Footer from '@Layouts/Footer'
 import PageLayout from '@Layouts/PageLayout'
 
 import './DevPage.scss'
 
 function DevPage() {
   return (
-    <PageLayout contentClassName="dev-page">
+    <PageLayout
+      contentClassName="dev-page"
+      footer={
+        <Footer>
+          <Button type="primary" />
+        </Footer>
+      }
+    >
       <Typography variant="title-t2-semiBold">Dev Page</Typography>
       <Icon
         iconName="house"

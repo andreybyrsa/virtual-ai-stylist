@@ -1,11 +1,10 @@
 import classNames from 'classnames'
 
-import FooterProps from '@Layouts/footer/Footer.types'
-
 import './Footer.scss'
+import FooterProps from './Footer.types'
 
 function Footer({ className, children }: FooterProps) {
-  const FooterClassName = classNames('Footer', className)
+  const FooterClassName = classNames('footer', className)
   return <Footer className={FooterClassName}>{children}</Footer>
 }
 
