@@ -3,6 +3,7 @@ import Icon from '@Components/Icon'
 import NumberField from '@Components/Inputs/NumberField'
 import PhoneField from '@Components/Inputs/PhoneField'
 import TextField from '@Components/Inputs/TextField'
+import NavigationSideBar from '@Components/NavigationComponents/NavigationSideBar'
 import Typography from '@Components/Typography'
 
 import Footer from '@Layouts/Footer'
@@ -15,8 +16,8 @@ function DevPage() {
     <PageLayout
       contentClassName="dev-page"
       footer={
-        <Footer>
-          <Button />
+        <Footer isNavigation>
+          <NavigationSideBar />
         </Footer>
       }
     >
