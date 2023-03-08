@@ -1,0 +1,3 @@
+.dev-page {
+  @include flexible($fd: column, $gap: 8px);
+}

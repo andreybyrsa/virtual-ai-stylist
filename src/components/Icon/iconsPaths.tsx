@@ -19,6 +19,7 @@ const iconsPaths = {
       fill="currentColor"
     />
   ),
+  empty: <path id="empty" />,
   house: (
     <>
       <path
