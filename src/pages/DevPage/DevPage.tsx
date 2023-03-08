@@ -16,7 +16,7 @@ function DevPage() {
       contentClassName="dev-page"
       footer={
         <Footer>
-          <Button type="primary" />
+          <Button />
         </Footer>
       }
     >
