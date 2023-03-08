@@ -1,25 +1,46 @@
-.IconButton {
+.icon-button{
   @include fixedWidth(48px);
   @include fixedHeight(48px);
 
+  @include flexible($ai: center, $jc: center);
+
+  transition: all .2s ease-out;
 
   &--primary{
     background: color(color-button-primary_enable);
+    border-radius: 10px;
 
-    transition: all .2s ease-out;
-    &:active {
-      background-color: color(color-button-primary_active);
-    }
+     &:active{
+       background: color(color-button-primary_active);
+     }
   }
 
   &--secondary{
     background: color(color-button-secondary_enable);
-    @include border(solid, color(color-border-secondary_enable), 10px, 1px);
+    @include border(solid, color(color-border-secondary_active), 10px, 2px);
 
-    transition: all .2s ease-out;
-    &:active {
+    .icon__button{
+      color: color(color-icon-tertiary);
+    }
+
+    &:active{
       background: color(color-button-secondary_active);
-      @include border(solid, color(color-border-secondary_active), 10px, 1px);
+
+      .icon__button{
+        color: color(color-icon-secondary);
+      }
+    }
+
+    &--disabled.icon-button--primary{
+      background: color(color-button-primary_disable);
+    }
+
+    &--disabled.icon-button--secondary{
+      background: color(color-button-secondary_disable);
+
+      .icon__button{
+        color: color(color-icon-tertiary);
+      }
     }
   }
 }

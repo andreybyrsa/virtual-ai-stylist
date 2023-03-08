@@ -1,5 +1,6 @@
 import Button from '@Components/Button'
 import Icon from '@Components/Icon'
+import IconButton from '@Components/IconButton'
 import NumberField from '@Components/Inputs/NumberField'
 import PhoneField from '@Components/Inputs/PhoneField'
 import TextField from '@Components/Inputs/TextField'
@@ -54,6 +55,12 @@ function DevPage() {
       <PhoneField
         label="Phone"
         required
+      />
+      <IconButton
+        disabled
+        type="primary"
+        iconName="house"
+        viewBox={40}
       />
     </PageLayout>
   )
