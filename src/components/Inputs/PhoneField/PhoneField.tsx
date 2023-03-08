@@ -8,6 +8,10 @@ import Typography from '@Components/Typography'
 import './PhoneField.scss'
 import PhoneFieldProps from './PhoneField.types'
 
+type FormValue = {
+  phoneField: string
+}
+
 function PhoneField({
   className,
 
@@ -21,7 +25,7 @@ function PhoneField({
     formState: { errors },
     getValues,
     setValue,
-  } = useForm({ mode: 'onChange' })
+  } = useForm<FormValue>({ mode: 'onChange' })
 
   const isRequired = errors?.phoneField?.type === 'required'
 
@@ -41,7 +45,7 @@ function PhoneField({
 
   useEffect(() => {
     if (!errors?.phoneField && getValues('phoneField').length >= 11) {
-      const phoneValue: string = [...getValues('phoneField')]
+      const phoneValue: string = Array.from(getValues('phoneField'))
         .reverse()
         .map((elem, index) => (index < 10 ? elem : ''))
         .reverse()

@@ -6,7 +6,7 @@ import Typography from '@Components/Typography'
 import './TextField.scss'
 import TextFieldProps from './TextField.types'
 
-type FormValues = {
+type FormValue = {
   textField: string
 }
 
@@ -23,7 +23,7 @@ function TextField({
   const {
     register,
     formState: { errors },
-  } = useForm<FormValues>({ mode: 'onChange' })
+  } = useForm<FormValue>({ mode: 'onChange' })
 
   const isRequired = errors?.textField?.type === 'required'
 

@@ -7,6 +7,10 @@ import Typography from '@Components/Typography'
 import './NumberField.scss'
 import NumberFieldProps from './NumberField.types'
 
+type FormValue = {
+  numberField: number
+}
+
 function NumberField({
   className,
 
@@ -21,7 +25,7 @@ function NumberField({
     register,
     formState: { errors },
     getValues,
-  } = useForm({ mode: 'onChange' })
+  } = useForm<FormValue>({ mode: 'onChange' })
 
   const isRequired = errors?.numberField?.type === 'required'
 
