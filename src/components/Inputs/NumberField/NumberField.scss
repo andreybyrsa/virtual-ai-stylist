@@ -1,0 +1,43 @@
+.number-field {
+  &-wrapper {
+    width: 100%;
+  }
+
+  &-label {
+    padding: 0 10px 10px;
+  }
+
+  position: relative;
+
+  width: 100%;
+  @include fixedHeight(44px);
+  background-color: color(color-input-primary);
+  @include border($border-radius: 8px);
+
+  &--required {
+    background-color: color(color-input-primary_error);
+    @include border(solid, color(color-border-primary_error), 8px, 1px);
+
+    .number-field__input::placeholder {
+      color: color(color-text-error);
+    }
+  }
+
+  &__input {
+    width: inherit;
+    height: inherit;
+    background-color: transparent;
+    padding: 0 20px;
+
+    @include typography(20px, 400, 18px);
+
+    &::placeholder {
+      color: color(color-text-primary);
+    }
+  }
+
+  &__icon {
+    z-index: 1;
+    @include position(absolute, $top: 10px, $right: 20px);
+  }
+}

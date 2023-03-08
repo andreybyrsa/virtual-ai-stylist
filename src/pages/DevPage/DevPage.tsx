@@ -1,5 +1,6 @@
 import Button from '@Components/Button'
 import Icon from '@Components/Icon'
+import NumberField from '@Components/Inputs/NumberField'
 import TextField from '@Components/Inputs/TextField'
 import Typography from '@Components/Typography'
 
@@ -34,6 +35,10 @@ function DevPage() {
       />
       <TextField
         label="Required"
+        required
+      />
+      <NumberField
+        label="Number"
         required
       />
     </PageLayout>

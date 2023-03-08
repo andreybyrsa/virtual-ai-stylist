@@ -11,20 +11,20 @@ function NumberField({
   className,
 
   label,
-  placeholder,
+  placeholder = 'Введите проверочный код',
 
   required,
   maxLength = 4,
   minLength = 4,
-
-  isPhoneField,
 }: NumberFieldProps) {
   const {
     register,
     formState: { errors },
+    getValues,
   } = useForm({ mode: 'onChange' })
 
   const isRequired = errors?.numberField?.type === 'required'
+
   const NumberFieldClassName = classNames(
     'number-field',
     {
@@ -33,8 +33,14 @@ function NumberField({
     className,
   )
 
-  if (isPhoneField) {
-    return <input />
+  const getCurrentIconName = (error: string) => {
+    if (isRequired) {
+      return 'xMark'
+    }
+    if (!getValues('numberField')) {
+      return 'empty'
+    }
+    return error !== 'undefined' ? 'xMark' : 'check'
   }
 
   return (
@@ -47,17 +53,24 @@ function NumberField({
           {label}
         </Typography>
       )}
-      <input
-        className={NumberFieldClassName}
-        placeholder={placeholder}
-        type="number"
-        {...register('numberField', {
-          required: !!required,
-          maxLength: maxLength,
-          minLength: minLength,
-        })}
-      />
-      {errors?.numberField ? <Icon iconName="check" /> : <Icon iconName="check" />}
+      <div className={NumberFieldClassName}>
+        <input
+          className="number-field__input"
+          placeholder={placeholder}
+          type=""
+          {...register('numberField', {
+            required: !!required,
+            pattern: /^[0-9]+$/,
+            maxLength: maxLength,
+            minLength: minLength,
+          })}
+        />
+        <Icon
+          className="number-field__icon"
+          iconName={getCurrentIconName(`${errors?.numberField?.type}`)}
+          color={errors?.numberField ? 'color-icon-error' : 'color-icon-correct'}
+        />
+      </div>
     </div>
   )
 }
