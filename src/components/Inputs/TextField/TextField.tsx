@@ -28,9 +28,9 @@ function TextField({
   const isRequired = errors?.textField?.type === 'required'
 
   const TextFieldClassName = classNames(
-    'input',
+    'text-field',
     {
-      'input--required': isRequired,
+      'text-field--required': isRequired,
     },
     className,
   )
@@ -46,10 +46,10 @@ function TextField({
   }
 
   return (
-    <div className="input-wrapper">
+    <div className="text-field-wrapper">
       {label && (
         <Typography
-          className="input-label"
+          className="text-field-label"
           variant="title-t4-medium"
         >
           {label}
@@ -68,7 +68,7 @@ function TextField({
       />
       {errors?.textField && (
         <Typography
-          className="input-error"
+          className="text-field-error"
           variant="text-t5-medium"
           color="color-text-error"
         >
