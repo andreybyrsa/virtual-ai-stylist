@@ -7,16 +7,19 @@ export type Colors = {
   'color-button-secondary_active': string
   'color-button-secondary_disable': string
   'color-button-secondary_enable': string
+  'color-border-primary_error': string
   'color-border-secondary_enable': string
   'color-border-secondary_active': string
   'color-border-secondary_disable': string
+  'color-icon-error': string
   'color-icon-correct': string
   'color-icon-primary': string
   'color-icon-secondary': string
   'color-icon-tertiary': string
   'color-image-primary': string
   'color-input-enable': string
-  'color-input-error': string
+  'color-input-primary': string
+  'color-input-primary_error': string
   'color-text-error': string
   'color-text-primary': string
   'color-text-secondary': string

@@ -13,6 +13,7 @@ $colors: (
   "color-icon-secondary": #02202B,
   "color-icon-tertiary": #00E4FF,
   "color-icon-correct": #2E994B,
+  "color-icon-error": #FF0000,
 
   //? Button colors
   "color-button-primary_enable": #264A5A,
@@ -24,13 +25,15 @@ $colors: (
   "color-button-secondary_disable": #7496A6,
 
   //? Border colors
+  "color-border-primary_error": #FF0000,
+
   "color-border-secondary_enable": #00E4FF,
   "color-border-secondary_active": #02202B,
   "color-border-secondary_disable": #00E4FF,
 
   //? Input colors
-  "color-input-enable": #8AA7BB,
-  "color-input-error": #FF0000,
+  "color-input-primary": #8AA7BB,
+  "color-input-primary_error": #FEE4E4,
 
   //? TextArea colors
   "color-textarea-primary": #5F8393,
