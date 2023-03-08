@@ -1,0 +1,34 @@
+.text-field {
+  &-wrapper {
+    width: 100%;
+  }
+
+  &-label {
+    padding: 0 10px 10px;
+  }
+
+  &-error {
+    padding: 4px 10px 0;
+  }
+
+  width: 100%;
+  @include fixedHeight(44px);
+  padding: 0 20px;
+  background-color: color(color-input-primary);
+  @include border($border-radius: 8px);
+
+  @include typography(20px, 400, 18px);
+
+  &::placeholder {
+    color: color(color-text-primary);
+  }
+
+  &--required {
+    background-color: color(color-input-primary_error);
+    @include border(solid, color(color-border-primary_error), 8px, 1px);
+
+    &::placeholder {
+      color: color(color-text-error);
+    }
+  }
+}

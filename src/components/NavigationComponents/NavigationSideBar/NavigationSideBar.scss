@@ -1,0 +1,6 @@
+.navigation-side-bar {
+  width: 100%;
+  background-color: color(color-background-secondary);
+
+  @include flexible(center, center);
+}

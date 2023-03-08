@@ -1,0 +1,11 @@
+.navigation-tab {
+  @include fixedHeight(48px);
+  padding: 0 30px;
+  background-color: transparent;
+
+  @include flexible(center, center);
+
+  &--active {
+    opacity: .6;
+  }
+}

@@ -1,0 +1,9 @@
+.footer{
+  padding: 16px 20px;
+
+  @include flexible($gap: 8px);
+
+  &--navigation{
+    padding: 16px 0 0;
+  }
+}
