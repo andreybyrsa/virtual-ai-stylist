@@ -1,6 +1,7 @@
 .navigation-tab {
   @include fixedHeight(48px);
-  padding: 0 30px;
+  min-width: 60px;
+  width: 100px;
   background-color: transparent;
 
   @include flexible(center, center);
