@@ -72,7 +72,7 @@ function TextField({
           variant="text-t5-medium"
           color="color-text-error"
         >
-          {getCurrentErrorMessage(errors?.textField.type)}
+          {getCurrentErrorMessage(errors?.textField?.type)}
         </Typography>
       )}
     </div>
