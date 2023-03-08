@@ -1,5 +1,3 @@
-import { useState } from 'react'
-
 import Button from '@Components/Button'
 import Icon from '@Components/Icon'
 import TextField from '@Components/Inputs/TextField'
@@ -10,9 +8,6 @@ import PageLayout from '@Layouts/PageLayout'
 import './DevPage.scss'
 
 function DevPage() {
-  const [textValue1, setTextValue1] = useState<string>('')
-  const [textValue2, setTextValue2] = useState<string>('')
-
   return (
     <PageLayout contentClassName="dev-page">
       <Typography variant="title-t2-semiBold">Dev Page</Typography>
@@ -33,13 +28,11 @@ function DevPage() {
       />
       <TextField
         label="Text"
-        value={textValue1}
-        setValue={setTextValue1}
+        minLength={5}
+        maxLength={10}
       />
       <TextField
         label="Required"
-        value={textValue2}
-        setValue={setTextValue2}
         required
       />
     </PageLayout>

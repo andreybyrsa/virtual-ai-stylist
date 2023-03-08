@@ -1,10 +1,6 @@
-import React, { InputHTMLAttributes, SetStateAction } from 'react'
+import { InputHTMLAttributes } from 'react'
 
 interface TextFieldProps extends InputHTMLAttributes<HTMLInputElement> {
-  className?: string
-
-  setValue: React.Dispatch<SetStateAction<string>>
-
   label?: string
 }
 

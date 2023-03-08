@@ -1,22 +1,31 @@
 import classNames from 'classnames'
-import { ChangeEvent, useEffect, useState } from 'react'
+import { useForm } from 'react-hook-form'
 
 import Typography from '@Components/Typography'
 
 import './TextField.scss'
 import TextFieldProps from './TextField.types'
 
+type FormValues = {
+  textField: string
+}
+
 function TextField({
   className,
 
-  value,
-  setValue,
-
   label,
   placeholder = 'Введите текст',
+
   required,
+  maxLength = 15,
+  minLength = 2,
 }: TextFieldProps) {
-  const [isRequired, setIsRequired] = useState<boolean>(!!required)
+  const {
+    register,
+    formState: { errors },
+  } = useForm<FormValues>({ mode: 'onChange' })
+
+  const isRequired = errors?.textField?.type === 'required'
 
   const TextFieldClassName = classNames(
     'input',
@@ -26,25 +35,21 @@ function TextField({
     className,
   )
 
-  const onHandlerChange = (event: ChangeEvent<HTMLInputElement>) => {
-    if (setValue) {
-      setValue(event.target.value)
-    }
+  const getCurrentErrorMessage = (error: string) => {
+    return error === 'pattern'
+      ? 'Вы ввели некорректную форму'
+      : error === 'maxLength'
+      ? `Длина должна быть меньше ${maxLength} символов`
+      : error === 'minLength'
+      ? `Длина должна быть больше ${minLength} символов`
+      : 'Форма обязательна к заполнению'
   }
-
-  useEffect(() => {
-    if (!value && required) {
-      setIsRequired(true)
-    } else {
-      setIsRequired(false)
-    }
-  }, [required, value])
 
   return (
     <div className="input-wrapper">
       {label && (
         <Typography
-          className="input-text"
+          className="input-label"
           variant="title-t4-medium"
         >
           {label}
@@ -52,11 +57,24 @@ function TextField({
       )}
       <input
         className={TextFieldClassName}
-        value={value}
-        onChange={onHandlerChange}
         placeholder={placeholder}
         type="text"
+        {...register('textField', {
+          required: !!required,
+          pattern: /^[a-zA-Z][a-zA-Z0-9]*[._-]?[a-zA-Z0-9]+$/,
+          maxLength: maxLength,
+          minLength: minLength,
+        })}
       />
+      {errors?.textField && (
+        <Typography
+          className="input-error"
+          variant="text-t5-medium"
+          color="color-text-error"
+        >
+          {getCurrentErrorMessage(errors?.textField.type)}
+        </Typography>
+      )}
     </div>
   )
 }
