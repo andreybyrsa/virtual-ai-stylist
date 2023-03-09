@@ -1,11 +1,14 @@
 import Button from '@Components/Button'
 import Icon from '@Components/Icon'
 import IconButton from '@Components/IconButton'
+import Image from '@Components/Image'
 import NumberField from '@Components/Inputs/NumberField'
 import PhoneField from '@Components/Inputs/PhoneField'
 import TextField from '@Components/Inputs/TextField'
 import NavigationSideBar from '@Components/NavigationComponents/NavigationSideBar'
 import Typography from '@Components/Typography'
+
+import jacket from '@Assets/Images/jacket.png'
 
 import Footer from '@Layouts/Footer'
 import Header from '@Layouts/Header'
@@ -24,9 +27,7 @@ function DevPage() {
       }
       header={
         <Header>
-          <Typography variant="text-t5-medium">
-            <div>Авторизация</div>
-          </Typography>
+          <Typography variant="text-t5-medium">Авторизация</Typography>
           <Icon
             iconName="house"
             color="color-icon-secondary"
@@ -73,6 +74,13 @@ function DevPage() {
       <IconButton
         iconName="house"
         viewBox={40}
+      />
+      <Image
+        imageSrc={jacket}
+        width={100}
+        height={100}
+        alt="alt"
+        isWrapped
       />
     </PageLayout>
   )
