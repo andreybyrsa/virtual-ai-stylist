@@ -15,32 +15,33 @@
      }
   }
 
-  &--secondary{
+  &--secondary {
     background: color(color-button-secondary_enable);
     @include border(solid, color(color-border-secondary_active), 10px, 2px);
 
-    .icon__button{
+    .icon__button {
       color: color(color-icon-tertiary);
     }
 
-    &:active{
+    &:active {
       background: color(color-button-secondary_active);
 
-      .icon__button{
+      .icon__button {
         color: color(color-icon-secondary);
       }
     }
+  }
 
-    &--disabled.icon-button--primary{
-      background: color(color-button-primary_disable);
-    }
+  &--disabled.icon-button--primary{
+    background: color(color-button-primary_disable);
+  }
 
-    &--disabled.icon-button--secondary{
-      background: color(color-button-secondary_disable);
+  &--disabled.icon-button--secondary{
+    background: color(color-button-secondary_disable);
+    @include border(solid, color(color-border-secondary_enable), 10px, 2px);
 
-      .icon__button{
-        color: color(color-icon-tertiary);
-      }
+    .icon__button{
+      color: color(color-icon-tertiary);
     }
   }
 }

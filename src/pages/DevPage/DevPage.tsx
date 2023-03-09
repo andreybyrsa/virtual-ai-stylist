@@ -71,8 +71,6 @@ function DevPage() {
         required
       />
       <IconButton
-        disabled
-        type="primary"
         iconName="house"
         viewBox={40}
       />

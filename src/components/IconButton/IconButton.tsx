@@ -1,9 +1,9 @@
 import classNames from 'classnames'
 
 import Icon from '@Components/Icon'
-import IconButtonProps from '@Components/IconButton/Iconbutton.types'
 
-import './Iconbutton.scss'
+import './IconButton.scss'
+import IconButtonProps from './IconButton.types'
 
 function IconButton({
   className,
