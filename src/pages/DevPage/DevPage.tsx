@@ -8,6 +8,7 @@ import NavigationSideBar from '@Components/NavigationComponents/NavigationSideBa
 import Typography from '@Components/Typography'
 
 import Footer from '@Layouts/Footer'
+import Header from '@Layouts/Header'
 import PageLayout from '@Layouts/PageLayout'
 
 import './DevPage.scss'
@@ -20,6 +21,19 @@ function DevPage() {
         <Footer isNavigation>
           <NavigationSideBar />
         </Footer>
+      }
+      header={
+        <Header>
+          <Typography variant="text-t5-medium">
+            <div>Авторизация</div>
+          </Typography>
+          <Icon
+            iconName="house"
+            color="color-icon-secondary"
+            size={15}
+            viewBox={45}
+          />
+        </Header>
       }
     >
       <Typography variant="title-t2-semiBold">Dev Page</Typography>
