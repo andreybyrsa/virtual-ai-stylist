@@ -1,0 +1,5 @@
+.header{
+  width: 100%;
+  @include flexible($jc: space-between, $ai: center);
+  padding: 10px 20px;
+}
