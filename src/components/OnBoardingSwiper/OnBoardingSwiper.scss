@@ -1,0 +1,31 @@
+.on-boarding-swiper {
+  margin-top: 8px;
+  &__slide {
+    margin-bottom: 16px;
+
+    text-align: center;
+
+    @include flexible(center, center, $fd: column);
+
+    &-image {
+      max-width: 335px;
+      max-height: 367px;
+      width: 100%;
+      height: 100%;
+
+      margin-bottom: 20px;
+    }
+
+    &-title {
+      margin-bottom: 16px;
+    }
+  }
+}
+
+.swiper-pagination {
+  position: static;
+
+  &-bullet-active {
+    background-color: color(color-background-secondary);
+  }
+}
