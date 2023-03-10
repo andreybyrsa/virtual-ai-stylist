@@ -49,6 +49,10 @@ function PhoneField({
 
   const onHandlerChange = (event: ChangeEvent<HTMLInputElement>) => {
     const currentEventValue = event.target.value.replaceAll(/[ \-()]/g, '')
+    if (currentEventValue.length > 12) {
+      setValue('phoneField', getValues('phoneField').slice(0, 20))
+      return
+    }
     if (currentEventValue === '+' || !currentEventValue) {
       setValue('phoneField', '+7')
       return
@@ -80,7 +84,6 @@ function PhoneField({
           {...register('phoneField', {
             required: !!required,
             validate: validatePhoneRegPattern,
-            minLength: 11,
             onChange: onHandlerChange,
           })}
         />
