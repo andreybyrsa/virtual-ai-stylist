@@ -24,9 +24,7 @@ function DevPage() {
       }
       header={
         <Header>
-          <Typography variant="text-t5-medium">
-            <div>Авторизация</div>
-          </Typography>
+          <Typography variant="text-t5-medium">Авторизация</Typography>
           <Icon
             iconName="house"
             color="color-icon-secondary"
