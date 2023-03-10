@@ -4,12 +4,12 @@ import { useForm } from 'react-hook-form'
 import Icon from '@Components/Icon'
 import Typography from '@Components/Typography'
 
+import getCurrentValidationIcon from '@Utils/getCurrentValidationIcon'
+
+import { FormsTypes } from '@Types/Forms.types'
+
 import './NumberField.scss'
 import NumberFieldProps from './NumberField.types'
-
-type FormValue = {
-  numberField: number
-}
 
 function NumberField({
   className,
@@ -25,7 +25,7 @@ function NumberField({
     register,
     formState: { errors },
     getValues,
-  } = useForm<FormValue>({ mode: 'onChange' })
+  } = useForm<FormsTypes>({ mode: 'onChange' })
 
   const isRequired = errors?.numberField?.type === 'required'
 
@@ -36,16 +36,6 @@ function NumberField({
     },
     className,
   )
-
-  const getCurrentIconName = (error: string) => {
-    if (isRequired) {
-      return 'xMark'
-    }
-    if (!getValues('numberField')) {
-      return 'empty'
-    }
-    return error !== 'undefined' ? 'xMark' : 'check'
-  }
 
   return (
     <div className="number-field-wrapper">
@@ -71,7 +61,12 @@ function NumberField({
         />
         <Icon
           className="number-field__icon"
-          iconName={getCurrentIconName(`${errors?.numberField?.type}`)}
+          iconName={getCurrentValidationIcon(
+            'numberField',
+            `${errors?.numberField?.type}`,
+            isRequired,
+            getValues,
+          )}
           color={errors?.numberField ? 'color-icon-error' : 'color-icon-correct'}
         />
       </div>
