@@ -1,0 +1,50 @@
+.cell {
+  .cell__text{
+    display: block;
+    width: 214px;
+    text-align: left;
+  }
+
+  .cell__icon{
+    display: block;
+  }
+
+  @include flexible($jc: space-between, $ai: center);
+  @include position($pos: relative);
+
+  overflow: hidden;
+
+  width: 100%;
+
+  border-bottom: 1px solid color(color-border-secondary_active);
+  border-top: 1px solid color(color-border-secondary_active);
+  padding: 24px 20px;
+
+  .cell__title{
+    color: color(color-text-primary);
+    transition: all .2s ease-out;
+  }
+
+  .cell_icon{
+    color: color(color-icon-secondary);
+  }
+}
+
+.cell::before{
+  content: " ";
+  @include position($pos: absolute, $right: 0);
+
+  width: 0;
+  height: 100%;
+
+  background: color(color-input-primary);
+
+  z-index: -1;
+
+  transition: all .2s ease-out;
+}
+
+.cell:active::before{
+  width: 100%;
+  height: 100%;
+}

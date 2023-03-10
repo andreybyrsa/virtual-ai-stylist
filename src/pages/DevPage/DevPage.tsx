@@ -1,4 +1,5 @@
 import Button from '@Components/Button'
+import Cell from '@Components/Cell'
 import Icon from '@Components/Icon'
 import IconButton from '@Components/IconButton'
 import Image from '@Components/Image'
@@ -75,6 +76,7 @@ function DevPage() {
         iconName="house"
         viewBox={40}
       />
+
       <Image
         imageSrc={jacket}
         width={100}
@@ -82,6 +84,10 @@ function DevPage() {
         alt="alt"
         isWrapped
       />
+      <Cell
+        title="Избранное"
+        after
+      ></Cell>
     </PageLayout>
   )
 }
