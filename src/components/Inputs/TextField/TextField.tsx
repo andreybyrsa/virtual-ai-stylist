@@ -3,12 +3,10 @@ import { useForm } from 'react-hook-form'
 
 import Typography from '@Components/Typography'
 
+import { FormsTypes } from '@Types/Forms.types'
+
 import './TextField.scss'
 import TextFieldProps from './TextField.types'
-
-type FormValue = {
-  textField: string
-}
 
 function TextField({
   className,
@@ -23,7 +21,7 @@ function TextField({
   const {
     register,
     formState: { errors },
-  } = useForm<FormValue>({ mode: 'onChange' })
+  } = useForm<FormsTypes>({ mode: 'onChange' })
 
   const isRequired = errors?.textField?.type === 'required'
 

@@ -4,12 +4,10 @@ import { useForm } from 'react-hook-form'
 import Icon from '@Components/Icon'
 import Typography from '@Components/Typography'
 
+import { FormsTypes } from '@Types/Forms.types'
+
 import './NumberField.scss'
 import NumberFieldProps from './NumberField.types'
-
-type FormValue = {
-  numberField: number
-}
 
 function NumberField({
   className,
@@ -25,7 +23,7 @@ function NumberField({
     register,
     formState: { errors },
     getValues,
-  } = useForm<FormValue>({ mode: 'onChange' })
+  } = useForm<FormsTypes>({ mode: 'onChange' })
 
   const isRequired = errors?.numberField?.type === 'required'
 
