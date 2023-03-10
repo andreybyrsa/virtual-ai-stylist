@@ -1,16 +1,17 @@
 import classNames from 'classnames'
-import { useEffect } from 'react'
+import { ChangeEvent, useEffect, useState } from 'react'
 import { useForm } from 'react-hook-form'
 
 import Icon from '@Components/Icon'
 import Typography from '@Components/Typography'
 
+import getCurrentValidationIcon from '@Utils/getCurrentValidationIcon'
+import getPhoneMaskPattern from '@Utils/getPhoneMaskPattern'
+
+import { FormsTypes } from '@Types/Forms.types'
+
 import './PhoneField.scss'
 import PhoneFieldProps from './PhoneField.types'
-
-type FormValue = {
-  phoneField: string
-}
 
 function PhoneField({
   className,
@@ -25,55 +26,40 @@ function PhoneField({
     formState: { errors },
     getValues,
     setValue,
-  } = useForm<FormValue>({ mode: 'onChange' })
-
-  const isRequired = errors?.phoneField?.type === 'required'
+  } = useForm<FormsTypes>({ mode: 'onChange' })
+  const [currentPhone, setCurrentPhone] = useState<string>('+7')
+  const [isRequired, setIsRequired] = useState<boolean>(false)
 
   const PhoneFieldClassName = classNames(
     'phone-field',
     {
-      'phone-field--required': isRequired,
+      'phone-field--required': isRequired && !!required,
     },
     className,
   )
 
   useEffect(() => {
-    if (!getValues('phoneField')) {
-      setValue('phoneField', '+7')
-    }
-  }, [getValues, setValue])
+    getPhoneMaskPattern(currentPhone, setValue)
+  }, [currentPhone, setValue])
 
-  useEffect(() => {
-    if (!errors?.phoneField && getValues('phoneField').length >= 11) {
-      const phoneValue: string = Array.from(getValues('phoneField'))
-        .reverse()
-        .map((elem, index) => (index < 10 ? elem : ''))
-        .reverse()
-        .join('')
-
-      let maskPattern = '+7 (***)-***-**-**'
-
-      for (let i = 0; i < 10; i++) {
-        maskPattern = maskPattern.replace('*', phoneValue[i])
-      }
-      setValue('phoneField', maskPattern)
-    }
-  })
-
-  const onFocusHandler = () => {
-    if (!getValues('phoneField')) {
-      setValue('phoneField', '+7')
-    }
+  const validatePhoneRegPattern = (value: string) => {
+    const currentPhoneValue = value.replaceAll(/[ \-()+]/g, '')
+    return /^(\+7|7|8)?\(?[489][0-9]{2}\)?[0-9]{3}?[0-9]{2}?[0-9]{2}$/.test(currentPhoneValue)
   }
 
-  const getCurrentIconName = (error: string) => {
-    if (isRequired) {
-      return 'xMark'
+  const onHandlerChange = (event: ChangeEvent<HTMLInputElement>) => {
+    const currentEventValue = event.target.value
+    if (currentEventValue === '+' || currentEventValue === '') {
+      setValue('phoneField', '+7')
+      return
     }
-    if (!getValues('phoneField')) {
-      return 'empty'
+    if (currentEventValue.replaceAll(/[ \-()]/g, '').length > currentPhone.length) {
+      setCurrentPhone((prevState) => prevState + currentEventValue.slice(-1))
+      setIsRequired(false)
+    } else {
+      setCurrentPhone((prevState) => prevState.slice(0, prevState.length - 1))
+      if (currentPhone.length === 3) setIsRequired((prevState) => !prevState)
     }
-    return error !== 'undefined' ? 'xMark' : 'check'
   }
 
   return (
@@ -89,18 +75,23 @@ function PhoneField({
       <div className={PhoneFieldClassName}>
         <input
           className="phone-field__input"
-          onFocus={onFocusHandler}
           placeholder={placeholder}
           type="tel"
           {...register('phoneField', {
             required: !!required,
-            pattern: /^(\+7|7|8)?\(?[489][0-9]{2}\)?[0-9]{3}?[0-9]{2}?[0-9]{2}$/,
+            validate: validatePhoneRegPattern,
             minLength: 11,
+            onChange: onHandlerChange,
           })}
         />
         <Icon
           className="phone-field__icon"
-          iconName={getCurrentIconName(`${errors?.phoneField?.type}`)}
+          iconName={getCurrentValidationIcon(
+            'phoneField',
+            `${errors?.phoneField?.type}`,
+            isRequired,
+            getValues,
+          )}
           color={errors?.phoneField ? 'color-icon-error' : 'color-icon-correct'}
         />
       </div>
