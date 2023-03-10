@@ -48,12 +48,12 @@ function PhoneField({
   }
 
   const onHandlerChange = (event: ChangeEvent<HTMLInputElement>) => {
-    const currentEventValue = event.target.value
-    if (currentEventValue === '+' || currentEventValue === '') {
+    const currentEventValue = event.target.value.replaceAll(/[ \-()]/g, '')
+    if (currentEventValue === '+' || !currentEventValue) {
       setValue('phoneField', '+7')
       return
     }
-    if (currentEventValue.replaceAll(/[ \-()]/g, '').length > currentPhone.length) {
+    if (currentEventValue.length > currentPhone.length) {
       setCurrentPhone((prevState) => prevState + currentEventValue.slice(-1))
       setIsRequired(false)
     } else {
