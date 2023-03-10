@@ -5,7 +5,13 @@ import Typography from '@Components/Typography'
 import './Button.scss'
 import ButtonProps from './Button.types'
 
-function Button({ className, type, disabled = false, children = 'Кнопка', onClick }: ButtonProps) {
+function Button({
+  className,
+  type = 'primary',
+  disabled = false,
+  children = 'Кнопка',
+  onClick,
+}: ButtonProps) {
   const ButtonClassName = classNames(
     'button',
     `button--${type}`,
