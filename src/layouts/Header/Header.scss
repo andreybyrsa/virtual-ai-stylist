@@ -5,12 +5,12 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
 
-  &__leftSideSlot{
+  &__left-side-slot{
     @include flexible($ai: center);
     justify-self: flex-start;
   }
 
-  &__rightSideSlot{
+  &__right-side-slot{
     @include flexible($ai: center);
     justify-self: flex-end;
   }
