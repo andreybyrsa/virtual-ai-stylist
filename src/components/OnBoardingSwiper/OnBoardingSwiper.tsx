@@ -76,7 +76,7 @@ function OnBoardingSwiper({ className, onHandlerSwipe }: OnBoardingSwiperProps) 
           >
             {elem.title}
           </Typography>
-          <Typography variant="text-t2-regular">{elem.text}</Typography>
+          <Typography variant="text-t4-regular">{elem.text}</Typography>
         </SwiperSlide>
       ))}
     </Swiper>

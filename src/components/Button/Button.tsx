@@ -29,7 +29,7 @@ function Button({
       type="button"
     >
       <Typography
-        variant="text-t5-medium"
+        variant="text-t2-medium"
         className="button__text"
       >
         {children}
