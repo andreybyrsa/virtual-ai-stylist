@@ -2,8 +2,8 @@ import React from 'react'
 
 interface HeaderProps {
   className?: string
-
-  children?: React.ReactNode
+  LeftSideSlot?: React.ReactNode
+  RightSideSlot?: React.ReactNode
 }
 
 export default HeaderProps

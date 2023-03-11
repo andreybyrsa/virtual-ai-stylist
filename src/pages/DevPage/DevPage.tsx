@@ -26,15 +26,17 @@ function DevPage() {
         </Footer>
       }
       header={
-        <Header>
-          <Typography variant="text-t5-medium">Авторизация</Typography>
-          <Icon
-            iconName="house"
-            color="color-icon-secondary"
-            size={15}
-            viewBox={45}
-          />
-        </Header>
+        <Header
+          LeftSideSlot={<Typography variant="title-t1-bold">Главная</Typography>}
+          RightSideSlot={
+            <Icon
+              iconName="house"
+              color="color-icon-secondary"
+              size={30}
+              viewBox={45}
+            />
+          }
+        />
       }
     >
       <Typography variant="title-t2-semiBold">Dev Page</Typography>
