@@ -25,7 +25,7 @@ function OnBoardingPage() {
     return (
       <Header className="on-boarding-page__header">
         <NavLink to="/">
-          <Typography variant="text-t3-semiBold">Пропустить</Typography>
+          <Typography variant="text-t2-medium">Пропустить</Typography>
         </NavLink>
       </Header>
     )

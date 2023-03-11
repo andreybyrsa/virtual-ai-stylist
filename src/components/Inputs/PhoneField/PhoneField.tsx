@@ -71,7 +71,7 @@ function PhoneField({
       {label && (
         <Typography
           className="phone-field-label"
-          variant="title-t4-medium"
+          variant="title-t3-medium"
         >
           {label}
         </Typography>
