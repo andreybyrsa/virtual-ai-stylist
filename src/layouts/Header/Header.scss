@@ -1,5 +1,18 @@
 .header{
   width: 100%;
-  @include flexible($jc: space-between, $ai: center);
-  padding: 10px 20px;
+  padding: 16px 20px;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  &__leftSideSlot{
+    @include flexible($ai: center);
+    justify-self: flex-start;
+  }
+
+  &__rightSideSlot{
+    @include flexible($ai: center);
+    justify-self: flex-end;
+  }
+
 }
