@@ -1,6 +1,7 @@
 export type Colors = {
   'color-background-primary': string
   'color-background-tertiary': string
+  'color-background-dark': string
   'color-button-primary_active': string
   'color-button-primary_disable': string
   'color-button-primary_enable': string
