@@ -23,11 +23,13 @@ function OnBoardingPage() {
 
   const header = useMemo(() => {
     return (
-      <Header className="on-boarding-page__header">
-        <NavLink to="/">
-          <Typography variant="text-t2-medium">Пропустить</Typography>
-        </NavLink>
-      </Header>
+      <Header
+        rightSideSlot={
+          <NavLink to="/">
+            <Typography variant="text-t2-medium">Пропустить</Typography>
+          </NavLink>
+        }
+      />
     )
   }, [])
 

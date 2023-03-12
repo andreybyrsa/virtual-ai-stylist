@@ -27,8 +27,8 @@ function DevPage() {
       }
       header={
         <Header
-          LeftSideSlot={<Typography variant="title-t1-bold">Главная</Typography>}
-          RightSideSlot={
+          leftSideSlot={<Typography variant="title-t1-bold">Главная</Typography>}
+          rightSideSlot={
             <Icon
               iconName="house"
               color="color-icon-secondary"
