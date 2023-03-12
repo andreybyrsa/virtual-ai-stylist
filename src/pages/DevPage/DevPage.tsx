@@ -1,3 +1,5 @@
+import { useEffect, useState } from 'react'
+
 import Button from '@Components/Button'
 import Icon from '@Components/Icon'
 import IconButton from '@Components/IconButton'
@@ -5,6 +7,7 @@ import Image from '@Components/Image'
 import NumberField from '@Components/Inputs/NumberField'
 import PhoneField from '@Components/Inputs/PhoneField'
 import TextField from '@Components/Inputs/TextField'
+import AppLoader from '@Components/Loaders/AppLoader'
 import NavigationSideBar from '@Components/NavigationComponents/NavigationSideBar'
 import Typography from '@Components/Typography'
 
@@ -17,6 +20,16 @@ import PageLayout from '@Layouts/PageLayout'
 import './DevPage.scss'
 
 function DevPage() {
+  const [isLoading, setIsLoading] = useState<boolean>(true)
+
+  useEffect(() => {
+    setTimeout(() => setIsLoading(false), 1500)
+  }, [])
+
+  if (isLoading) {
+    return <AppLoader />
+  }
+
   return (
     <PageLayout
       contentClassName="dev-page"
