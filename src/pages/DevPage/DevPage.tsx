@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react'
 
 import Button from '@Components/Button'
+import Card from '@Components/Cards/Card'
 import Icon from '@Components/Icon'
 import IconButton from '@Components/IconButton'
-import Image from '@Components/Image'
 import NumberField from '@Components/Inputs/NumberField'
 import PhoneField from '@Components/Inputs/PhoneField'
 import TextField from '@Components/Inputs/TextField'
@@ -11,7 +11,7 @@ import AppLoader from '@Components/Loaders/AppLoader'
 import NavigationSideBar from '@Components/NavigationComponents/NavigationSideBar'
 import Typography from '@Components/Typography'
 
-import jacket from '@Assets/Images/jacket.png'
+import { jacket } from '@Assets/Images'
 
 import Footer from '@Layouts/Footer'
 import Header from '@Layouts/Header'
@@ -90,12 +90,10 @@ function DevPage() {
         iconName="house"
         viewBox={40}
       />
-      <Image
-        imageSrc={jacket}
-        width={100}
-        height={100}
-        alt="alt"
-        isWrapped
+      <Card
+        cardName="Норм образ"
+        imageSrces={[jacket, jacket, jacket, jacket, jacket, jacket]}
+        date="44.44.4444"
       />
     </PageLayout>
   )
