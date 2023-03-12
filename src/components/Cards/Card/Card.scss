@@ -1,0 +1,25 @@
+.card {
+  @include fixedWidth(160px);
+
+  @include flexible(center, flex-start, $fd: column);
+
+  &__images {
+    width: 100%;
+    min-height: 257px;
+    @include border($border-radius: (20px 20px 0 0));
+    background-color: color(color-image-primary);
+
+    @include flexible($fw: wrap);
+  }
+
+  &__info {
+    width: 100%;
+    min-height: 60px;
+    @include border($border-radius: (0 0 20px 20px));
+    background-color: color(color-background-dark_light);
+    padding: 10px 16px;
+
+    word-wrap: break-word;
+    text-align: center;
+  }
+}
