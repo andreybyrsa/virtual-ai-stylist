@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 
 import Button from '@Components/Button'
 import Card from '@Components/Cards/Card'
+import HorizontalCard from '@Components/Cards/HorizontalCard'
 import Icon from '@Components/Icon'
 import IconButton from '@Components/IconButton'
 import NumberField from '@Components/Inputs/NumberField'
@@ -94,6 +95,19 @@ function DevPage() {
         cardName="Норм образ"
         imageSrces={[jacket, jacket, jacket, jacket, jacket, jacket]}
         date="44.44.4444"
+      />
+      <HorizontalCard
+        imageSrc={jacket}
+        cardInfo={{
+          clothesName: 'Пиджак классический',
+          clothesColor: 'Черный цвет',
+          clothesGender: 'Мужской',
+        }}
+        links={[
+          'https://www.detmir.ru/catalog/index/name/.',
+          'https://www.detmir.ru/catalog/index/name/.',
+          'https://www.detmir.ru/catalog/index/name/.',
+        ]}
       />
     </PageLayout>
   )
