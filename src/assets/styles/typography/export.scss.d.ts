@@ -11,6 +11,7 @@ export type Typography = {
   'title-t4-medium': string
   'title-t5-medium': string
   'title-t6-semiBold': string
+  'title-t7-semiBold': string
 }
 
 export type TypographyVariants = keyof Typography

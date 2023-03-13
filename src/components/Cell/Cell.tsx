@@ -1,6 +1,5 @@
 import classNames from 'classnames'
 
-import Icon from '@Components/Icon'
 import Typography from '@Components/Typography'
 
 import './Cell.scss'
@@ -11,42 +10,25 @@ function Cell({
   disabled = false,
   onClick,
   title,
-  before = false,
-  after = false,
+  before,
+  after,
   subtitle,
   text,
 }: CellProps) {
   const CellClassName = classNames('cell', { 'cell--disabled': disabled }, className)
   return (
-    <button
+    <div
       className={CellClassName}
       onClick={onClick}
-      disabled={disabled}
     >
-      {before && (
-        <Icon
-          className="cell__icon"
-          iconName="house"
-          color="color-icon-secondary"
-          size={20}
-          viewBox={45}
-        />
-      )}
+      {before}
       <div className="cell__text">
-        <Typography variant="title-t4-medium">{title}</Typography>
-        <Typography variant="title-t6-semiBold">{subtitle}</Typography>
-        <Typography variant="text-t5-medium">{text}</Typography>
+        <Typography variant="title-t3-medium">{title}</Typography>
+        <Typography variant="title-t7-semiBold">{subtitle}</Typography>
+        <Typography variant="text-t6-semiBold">{text}</Typography>
       </div>
-      {after && (
-        <Icon
-          className="cell__icon"
-          iconName="house"
-          color="color-icon-secondary"
-          size={20}
-          viewBox={45}
-        />
-      )}
-    </button>
+      {after}
+    </div>
   )
 }
 

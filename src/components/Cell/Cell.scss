@@ -1,45 +1,36 @@
 .cell {
-  .cell__text{
-    display: block;
-    width: 214px;
-    text-align: left;
-  }
-
-  .cell__icon{
-    display: block;
-  }
-
   @include flexible($jc: space-between, $ai: center);
   @include position($pos: relative);
 
-  overflow: hidden;
-
-  width: 100%;
-
   border-bottom: 1px solid color(color-border-secondary_active);
   border-top: 1px solid color(color-border-secondary_active);
-  padding: 24px 20px;
+  padding: 5px 8px;
+  @include fixedHeight(60px);
+  width: 100%;
 
-  .cell__title{
-    color: color(color-text-primary);
-    transition: all .2s ease-out;
+  &__text{
+    display: block;
+    width: 100%;
+    padding: 0 8px;
+
+    text-align: left;
   }
 
-  .cell_icon{
-    color: color(color-icon-secondary);
+  &--disabled{
+    background: color(color-background-primary);
   }
+
 }
 
 .cell::before{
-  content: " ";
   @include position($pos: absolute, $right: 0);
+  z-index: -1;
 
-  width: 0;
-  height: 100%;
+  content: " ";
 
   background: color(color-input-primary);
-
-  z-index: -1;
+  width: 0;
+  height: 100%;
 
   transition: all .2s ease-out;
 }

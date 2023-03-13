@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 
 import Button from '@Components/Button'
 import Card from '@Components/Cards/Card'
+import Cell from '@Components/Cell'
 import Icon from '@Components/Icon'
 import IconButton from '@Components/IconButton'
 import NumberField from '@Components/Inputs/NumberField'
@@ -94,6 +95,20 @@ function DevPage() {
         cardName="Норм образ"
         imageSrces={[jacket, jacket, jacket, jacket, jacket, jacket]}
         date="44.44.4444"
+      />
+      <Cell
+        // title="Избранное"
+        subtitle="Индивидуальные рекомендации"
+        text="Какой-то текст, который описывает заголвоок"
+        disabled
+        before={
+          <Icon
+            iconName="house"
+            color="color-icon-secondary"
+            size={30}
+            viewBox={45}
+          />
+        }
       />
     </PageLayout>
   )

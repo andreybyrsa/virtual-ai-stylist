@@ -1,4 +1,4 @@
-import { MouseEventHandler } from 'react'
+import React, { MouseEventHandler } from 'react'
 
 interface CellProps {
   className?: string
@@ -9,8 +9,8 @@ interface CellProps {
 
   onClick?: MouseEventHandler
 
-  before?: boolean
-  after?: boolean
+  before?: React.ReactNode
+  after?: React.ReactNode
 
   disabled?: boolean
 }
