@@ -5,7 +5,13 @@ import Typography from '@Components/Typography'
 import './Button.scss'
 import ButtonProps from './Button.types'
 
-function Button({ className, type, disabled = false, children = 'Кнопка', onClick }: ButtonProps) {
+function Button({
+  className,
+  type = 'primary',
+  disabled = false,
+  children = 'Кнопка',
+  onClick,
+}: ButtonProps) {
   const ButtonClassName = classNames(
     'button',
     `button--${type}`,
@@ -23,7 +29,7 @@ function Button({ className, type, disabled = false, children = 'Кнопка', 
       type="button"
     >
       <Typography
-        variant="text-t5-medium"
+        variant="text-t2-medium"
         className="button__text"
       >
         {children}

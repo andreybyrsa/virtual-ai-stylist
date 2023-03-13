@@ -4,7 +4,7 @@
   }
 
   &-label {
-    padding: 0 10px 10px;
+    padding: 0 10px 4px;
   }
 
   position: relative;
@@ -29,7 +29,7 @@
     background-color: transparent;
     padding: 0 20px;
 
-    @include typography(20px, 400, 18px);
+    @include typography(20px, 400, 24px);
 
     &::placeholder {
       color: color(color-text-primary);
