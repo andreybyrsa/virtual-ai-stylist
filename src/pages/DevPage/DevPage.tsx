@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react'
 import Button from '@Components/Button'
 import Card from '@Components/Cards/Card'
 import HorizontalCard from '@Components/Cards/HorizontalCard'
+import Cell from '@Components/Cell'
 import Icon from '@Components/Icon'
 import IconButton from '@Components/IconButton'
 import NumberField from '@Components/Inputs/NumberField'
@@ -108,6 +109,17 @@ function DevPage() {
           'https://www.detmir.ru/catalog/index/name/.',
           'https://www.detmir.ru/catalog/index/name/.',
         ]}
+      />
+      <Cell
+        title="Избранное"
+        before={
+          <Icon
+            iconName="house"
+            color="color-icon-correct"
+            size={40}
+            viewBox={45}
+          />
+        }
       />
     </PageLayout>
   )
