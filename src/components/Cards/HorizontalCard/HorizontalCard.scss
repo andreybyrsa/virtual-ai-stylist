@@ -1,0 +1,67 @@
+.horizontal-card {
+  $parent: &;
+
+  height: 110px;
+  width: 100%;
+
+  &__clothes-content {
+    position: relative;
+    z-index: 1;
+
+    padding: 10px;
+    @include border($border-radius: 20px);
+    background-color: color(color-background-light);
+
+    @include flexible(center, space-between, $gap: 10px);
+  }
+
+  &__description {
+    cursor: pointer;
+
+    width: 100%;
+
+    @include flexible(flex-start, flex-start, $fd: column, $gap: 4px);
+  }
+
+  &__links {
+    padding: 0 20px 16px;
+    @include border($border-radius: (0 0 20px 20px));
+    background-color: color(color-background-light);
+
+    animation: .3s closeLinks ease-out forwards;
+  }
+
+  &--is-opened {
+    height: min-content;
+
+    #{$parent}__clothes-content {
+      @include border($border-radius: (20px 20px 0 0));
+    }
+
+    #{$parent}__links {
+      display: block;
+
+      animation: .3s openLinks ease-out forwards;
+    }
+  }
+}
+
+@keyframes openLinks {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes closeLinks {
+  from {
+    display: block;
+    transform: translateY(0);
+  }
+  to {
+    display: none;
+    transform: translateY(-100%);
+  }
+}

@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 
 import Button from '@Components/Button'
 import Card from '@Components/Cards/Card'
+import HorizontalCard from '@Components/Cards/HorizontalCard'
 import Cell from '@Components/Cell'
 import Icon from '@Components/Icon'
 import IconButton from '@Components/IconButton'
@@ -96,16 +97,26 @@ function DevPage() {
         imageSrces={[jacket, jacket, jacket, jacket, jacket, jacket]}
         date="44.44.4444"
       />
+      <HorizontalCard
+        imageSrc={jacket}
+        cardInfo={{
+          clothesName: 'Пиджак классический',
+          clothesColor: 'Черный цвет',
+          clothesGender: 'Мужской',
+        }}
+        links={[
+          'https://www.detmir.ru/catalog/index/name/.',
+          'https://www.detmir.ru/catalog/index/name/.',
+          'https://www.detmir.ru/catalog/index/name/.',
+        ]}
+      />
       <Cell
-        // title="Избранное"
-        subtitle="Индивидуальные рекомендации"
-        text="Какой-то текст, который описывает заголвоок"
-        disabled
+        title="Избранное"
         before={
           <Icon
             iconName="house"
-            color="color-icon-secondary"
-            size={30}
+            color="color-icon-correct"
+            size={40}
             viewBox={45}
           />
         }

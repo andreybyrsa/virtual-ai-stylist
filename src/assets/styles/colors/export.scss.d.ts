@@ -1,6 +1,7 @@
 export type Colors = {
   'color-background-dark': string
   'color-background-dark_light': string
+  'color-background-light': string
   'color-background-primary': string
   'color-background-secondary': string
   'color-background-tertiary': string
@@ -26,6 +27,7 @@ export type Colors = {
   'color-text-primary': string
   'color-text-secondary': string
   'color-text-tertiary': string
+  'color-text-link': string
   'color-textarea-primary': string
 }
 
