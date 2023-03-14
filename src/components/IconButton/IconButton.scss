@@ -17,7 +17,7 @@
 
   &--secondary {
     background: color(color-button-secondary_enable);
-    @include border(solid, color(color-border-secondary_active), 10px, 2px);
+    @include border(solid, color(color-border-secondary_enable), 10px, 2px);
 
     .icon__button {
       color: color(color-icon-tertiary);
@@ -25,6 +25,7 @@
 
     &:active {
       background: color(color-button-secondary_active);
+      @include border(solid, color(color-border-secondary_active), 10px, 2px);
 
       .icon__button {
         color: color(color-icon-secondary);
