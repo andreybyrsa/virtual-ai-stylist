@@ -1,17 +1,9 @@
 .look-loader {
   @include position(fixed, 0, 0, 0, 0);
 
-  background: url("../../../assets/Images/lookLoaderBackground.png") repeat-y;
-  background-size: cover;
-  box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, .4);
+  @include animatedBackground();
 
   @include flexible(center, center);
-
-  animation: 188s infinityScroll infinite linear;
-
-  @keyframes infinityScroll {
-    to {background-position: 0 1000 * 10px}
-  }
 
   &__image {
     animation: 8s infinityRotate infinite linear ;

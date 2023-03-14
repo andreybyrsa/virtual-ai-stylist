@@ -1,0 +1,11 @@
+.upload-look-page {
+  @include animatedBackground();
+
+  &__content {
+    @include flexible(center, center, $fd: column, $gap: 16px);
+  }
+
+  &__file-input {
+    display: none;
+  }
+}
