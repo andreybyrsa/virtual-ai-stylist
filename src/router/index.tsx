@@ -8,7 +8,7 @@ import OnBoardingPage from '@Pages/OnBoardingPage'
 
 const router = createBrowserRouter([
   {
-    path: '/index',
+    path: '/',
     element: <IndexPage />,
   },
   {

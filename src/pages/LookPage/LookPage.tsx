@@ -4,6 +4,7 @@ import Button from '@Components/Button'
 import HorizontalCard from '@Components/Cards/HorizontalCard'
 import Icon from '@Components/Icon'
 import IconButton from '@Components/IconButton'
+import TextField from '@Components/Inputs/TextField'
 
 import { jacket } from '@Assets/Images'
 
@@ -55,6 +56,7 @@ function LookPage() {
       header={header}
       footer={footer}
     >
+      <TextField placeholder="Классический стиль"></TextField>
       <HorizontalCard
         imageSrc={jacket}
         cardInfo={{
