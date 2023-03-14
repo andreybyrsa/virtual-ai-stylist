@@ -67,6 +67,7 @@ function LookPage() {
       <div className="look-page__content-cards">
         {cards.map((elem) => (
           <HorizontalCard
+            key={elem.id}
             imageSrc={elem.src}
             cardInfo={{
               clothesName: 'Пиджак классический',
