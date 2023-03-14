@@ -1,0 +1,9 @@
+.look-page__content{
+  @include flexible($fw:wrap);
+  gap: 16px;
+
+  &-cards{
+    @include flexible($fw:wrap);
+    gap: 16px;
+  }
+}

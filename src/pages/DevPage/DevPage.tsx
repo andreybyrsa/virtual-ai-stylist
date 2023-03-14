@@ -121,6 +121,7 @@ function DevPage() {
           />
         }
       />
+      <TextField placeholder="Классический стиль"></TextField>
     </PageLayout>
   )
 }
