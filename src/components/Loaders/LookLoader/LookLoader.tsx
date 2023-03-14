@@ -2,7 +2,7 @@ import classNames from 'classnames'
 
 import Image from '@Components/Image'
 
-import { gear } from '@Assets/Images'
+import { gear } from '@Assets/images'
 
 import './LookLoader.scss'
 import LookLoaderProps from './LookLoader.types'

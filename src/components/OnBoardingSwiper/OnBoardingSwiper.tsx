@@ -7,7 +7,7 @@ import 'swiper/scss/pagination'
 import Image from '@Components/Image'
 import Typography from '@Components/Typography'
 
-import onBoardingContent from '@Assets/Images/onBoardingContent.png'
+import onBoardingContent from '@Assets/images/onBoardingContent.png'
 
 import './OnBoardingSwiper.scss'
 import OnBoardingSwiperProps from './OnBoardingSwiper.types'

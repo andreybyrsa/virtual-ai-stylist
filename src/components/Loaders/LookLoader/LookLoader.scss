@@ -1,7 +1,7 @@
 .look-loader {
   @include position(fixed, 0, 0, 0, 0);
 
-  background: url("../../../assets/Images/lookLoaderBackground.png") repeat-y;
+  background: url("../../../assets/images/lookLoaderBackground.png") repeat-y;
   background-size: cover;
   box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, .4);
 
