@@ -25,7 +25,7 @@ const navLinks: NavLinksTypes[] = [
     id: 1,
     iconName: 'plus',
     viewBox: 50,
-    to: '/page',
+    to: '/upload-look',
   },
   {
     id: 2,
