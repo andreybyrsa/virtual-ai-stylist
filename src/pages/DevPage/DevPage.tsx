@@ -97,19 +97,7 @@ function DevPage() {
         imageSrces={[jacket, jacket, jacket, jacket, jacket, jacket]}
         date="44.44.4444"
       />
-      <HorizontalCard
-        imageSrc={jacket}
-        cardInfo={{
-          clothesName: 'Пиджак классический',
-          clothesColor: 'Черный цвет',
-          clothesGender: 'Мужской',
-        }}
-        links={[
-          'https://www.detmir.ru/catalog/index/name/.',
-          'https://www.detmir.ru/catalog/index/name/.',
-          'https://www.detmir.ru/catalog/index/name/.',
-        ]}
-      />
+
       <Cell
         title="Избранное"
         before={
@@ -122,6 +110,34 @@ function DevPage() {
         }
       />
       <TextField placeholder="Классический стиль"></TextField>
+      <HorizontalCard
+        type="primary"
+        imageSrc={jacket}
+        cardInfo={{
+          clothesName: 'Пиджак классический',
+          clothesColor: 'Черный цвет',
+          clothesGender: 'Мужской',
+        }}
+        links={[
+          'https://www.detmir.ru/catalog/index/name/.',
+          'https://www.detmir.ru/catalog/index/name/.',
+          'https://www.detmir.ru/catalog/index/name/.',
+        ]}
+      />
+      <HorizontalCard
+        type="secondary"
+        imageSrc={jacket}
+        cardInfo={{
+          clothesName: 'Пиджак классический',
+          clothesColor: 'Черный цвет',
+          clothesGender: 'Мужской',
+        }}
+        links={[
+          'https://www.detmir.ru/catalog/index/name/.',
+          'https://www.detmir.ru/catalog/index/name/.',
+          'https://www.detmir.ru/catalog/index/name/.',
+        ]}
+      />
     </PageLayout>
   )
 }
