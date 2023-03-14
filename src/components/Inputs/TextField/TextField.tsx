@@ -48,7 +48,7 @@ function TextField({
       {label && (
         <Typography
           className="text-field-label"
-          variant="title-t4-medium"
+          variant="title-t3-medium"
         >
           {label}
         </Typography>
@@ -67,7 +67,7 @@ function TextField({
       {errors?.textField && (
         <Typography
           className="text-field-error"
-          variant="text-t5-medium"
+          variant="text-t2-medium"
           color="color-text-error"
         >
           {getCurrentErrorMessage(errors?.textField?.type)}
