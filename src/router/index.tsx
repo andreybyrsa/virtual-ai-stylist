@@ -1,5 +1,6 @@
 import { createBrowserRouter } from 'react-router-dom'
 
+import AuthPage from '@Pages/AuthPage'
 import DevPage from '@Pages/DevPage'
 import FavouritesPage from '@Pages/FavouritesPage'
 import IndexPage from '@Pages/IndexPage'
@@ -17,6 +18,10 @@ const router = createBrowserRouter([
   {
     path: '/on-boarding',
     element: <OnBoardingPage />,
+  },
+  {
+    path: '/auth',
+    element: <AuthPage />,
   },
   {
     path: '/dev',
