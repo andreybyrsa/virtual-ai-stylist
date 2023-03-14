@@ -15,10 +15,10 @@ import PageLayout from '@Layouts/PageLayout'
 import './LookPage.scss'
 
 const cards = [
-  { id: 0, name: 'card0', src: jacket, key: 0 },
-  { id: 1, name: 'card1', src: jacket, key: 1 },
-  { id: 2, name: 'card2', src: jacket, key: 2 },
-  { id: 3, name: 'card3', src: jacket, key: 3 },
+  { id: 0, name: 'card0', src: jacket },
+  { id: 1, name: 'card1', src: jacket },
+  { id: 2, name: 'card2', src: jacket },
+  { id: 3, name: 'card3', src: jacket },
 ]
 
 function LookPage() {
@@ -67,7 +67,6 @@ function LookPage() {
       <div className="look-page__content-cards">
         {cards.map((elem) => (
           <HorizontalCard
-            key={elem.id}
             imageSrc={elem.src}
             cardInfo={{
               clothesName: 'Пиджак классический',
