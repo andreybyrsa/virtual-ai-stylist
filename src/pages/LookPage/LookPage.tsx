@@ -6,7 +6,7 @@ import Icon from '@Components/Icon'
 import IconButton from '@Components/IconButton'
 import TextField from '@Components/Inputs/TextField'
 
-import { jacket } from '@Assets/Images'
+import { jacket } from '@Assets/images'
 
 import Footer from '@Layouts/Footer'
 import Header from '@Layouts/Header'
