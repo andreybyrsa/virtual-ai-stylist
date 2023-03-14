@@ -49,6 +49,10 @@ function PhoneField({
 
   const onHandlerChange = (event: ChangeEvent<HTMLInputElement>) => {
     const currentEventValue = event.target.value.replaceAll(/[ \-()]/g, '')
+    if (currentEventValue.length > 12) {
+      setValue('phoneField', getValues('phoneField').slice(0, 20))
+      return
+    }
     if (currentEventValue === '+' || !currentEventValue) {
       setValue('phoneField', '+7')
       return
@@ -67,7 +71,7 @@ function PhoneField({
       {label && (
         <Typography
           className="phone-field-label"
-          variant="title-t4-medium"
+          variant="title-t3-medium"
         >
           {label}
         </Typography>
@@ -80,7 +84,6 @@ function PhoneField({
           {...register('phoneField', {
             required: !!required,
             validate: validatePhoneRegPattern,
-            minLength: 11,
             onChange: onHandlerChange,
           })}
         />

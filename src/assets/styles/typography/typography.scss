@@ -3,20 +3,19 @@
 
 $typography: (
   //? Titles
-  "title-t1-bold": ("fs": 32px, "fw": 700, "ln": 30px),
-  "title-t2-semiBold": ("fs": 24px, "fw": 600, "ln": 22px),
-  "title-t3-semiBold": ("fs": 20px, "fw": 600, "ln": 18px),
-  "title-t4-medium": ("fs": 20px, "fw": 500, "ln": 17px),
-  "title-t5-semiBold": ("fs": 16px, "fw": 600, "ln": 16px),
-  "title-t6-semiBold": ("fs": 16px, "fw": 600, "ln": 14px),
-  "title-t7-semiBold": ("fs": 14px, "fw": 600, "ln": 14px),
-  "title-t8-medium": ("fs": 12px, "fw": 500, "ln": 20px),
+  "title-t1-bold": ("fs": 32px, "fw": 700, "ln": 40px),
+  "title-t2-semiBold": ("fs": 24px, "fw": 600, "ln": 32px),
+  "title-t3-medium": ("fs": 20px, "fw": 500, "ln": 26px),
+  "title-t4-medium": ("fs": 14px, "fw": 500, "ln": 20px),
+  "title-t5-medium": ("fs": 12px, "fw": 500, "ln": 16px),
+  "title-t6-semiBold": ("fs": 10px, "fw": 600, "ln": 14px),
+  "title-t7-semiBold": ("fs": 12px, "fw": 600, "ln": 16px),
 
   //? Texts
-  "text-t1-regular": ("fs": 20px, "fw": 400, "ln": 18px),
-  "text-t2-regular": ("fs": 16px, "fw": 400, "ln": 22px),
-  "text-t3-semiBold": ("fs": 15px, "fw": 600, "ln": 16px),
+  "text-t1-regular": ("fs": 20px, "fw": 400, "ln": 24px),
+  "text-t2-medium": ("fs": 16px, "fw": 500, "ln": 20px),
+  "text-t3-medium": ("fs": 16px, "fw": 500, "ln": 22px),
   "text-t4-regular": ("fs": 14px, "fw": 400, "ln": 22px),
-  "text-t5-medium": ("fs": 14px, "fw": 500, "ln": 20px),
-  "text-t6-semiBold": ("fs": 10px, "fw": 600, "ln": 10px),
+  "text-t5-medium": ("fs": 12px, "fw": 500, "ln": 20px),
+  "text-t6-semiBold": ("fs": 10px, "fw": 600, "ln": 12px),
 );

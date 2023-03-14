@@ -42,7 +42,7 @@ function NumberField({
       {label && (
         <Typography
           className="number-field-label"
-          variant="title-t4-medium"
+          variant="title-t3-medium"
         >
           {label}
         </Typography>

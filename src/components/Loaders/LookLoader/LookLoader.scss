@@ -1,0 +1,20 @@
+.look-loader {
+  @include position(fixed, 0, 0, 0, 0);
+
+  @include animatedBackground();
+
+  @include flexible(center, center);
+
+  &__image {
+    animation: 8s infinityRotate infinite linear ;
+
+    @keyframes infinityRotate {
+      from {
+        transform: rotate(0);
+      }
+      to {
+        transform: rotate(360deg);
+      }
+    }
+  }
+}
