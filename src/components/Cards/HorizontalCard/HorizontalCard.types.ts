@@ -7,6 +7,8 @@ type CardInfoTypes = {
 interface HorizontalCardProps {
   className?: string
 
+  type?: 'primary' | 'secondary'
+
   imageSrc: string
   cardInfo: CardInfoTypes
   links: string[]

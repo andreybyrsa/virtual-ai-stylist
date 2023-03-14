@@ -7,7 +7,13 @@ import Typography from '@Components/Typography'
 import './HorizontalCard.scss'
 import HorizontalCardProps from './HorizontalCard.types'
 
-function HorizontalCard({ className, imageSrc, cardInfo, links }: HorizontalCardProps) {
+function HorizontalCard({
+  className,
+  imageSrc,
+  cardInfo,
+  links,
+  type = 'primary',
+}: HorizontalCardProps) {
   const [isOpened, setIsOpened] = useState<boolean>(false)
   const HorizontalCardClassName = classNames(
     'horizontal-card',
@@ -16,6 +22,13 @@ function HorizontalCard({ className, imageSrc, cardInfo, links }: HorizontalCard
     },
     className,
   )
+
+  const ClothesClassName = classNames(
+    'horizontal-card__clothes-content',
+    `horizontal-card__clothes-content--${type}`,
+  )
+
+  const LinksClassName = classNames('horizontal-card__links', `horizontal-card__links--${type}`)
 
   const CardDescription = Object.values(cardInfo).sort((a, b) => {
     if (a === cardInfo.clothesName && b) {
@@ -35,7 +48,7 @@ function HorizontalCard({ className, imageSrc, cardInfo, links }: HorizontalCard
       className={HorizontalCardClassName}
       onClick={onHandlerOpen}
     >
-      <div className="horizontal-card__clothes-content">
+      <div className={ClothesClassName}>
         <Image
           imageSrc={imageSrc}
           width={90}
@@ -45,6 +58,7 @@ function HorizontalCard({ className, imageSrc, cardInfo, links }: HorizontalCard
         <div className="horizontal-card__description">
           {CardDescription.map((elem, index) => (
             <Typography
+              className="horizontal-card__text"
               key={index}
               variant="text-t2-medium"
             >
@@ -53,7 +67,7 @@ function HorizontalCard({ className, imageSrc, cardInfo, links }: HorizontalCard
           ))}
         </div>
       </div>
-      <div className="horizontal-card__links">
+      <div className={LinksClassName}>
         {links.map((elem, index) => (
           <Typography
             key={index}

@@ -10,9 +10,22 @@
 
     padding: 10px;
     @include border($border-radius: 20px);
-    background-color: color(color-background-light);
 
     @include flexible(center, space-between, $gap: 10px);
+
+    &--primary{
+      background-color: color(color-background-light);
+
+    }
+
+    &--secondary{
+      background-color: color(color-button-secondary_enable);
+      @include border(solid, color(color-border-secondary_enable), 20px, 3px);
+
+      .horizontal-card__text{
+        color: color(color-text-secondary);
+      }
+    }
   }
 
   &__description {
@@ -23,12 +36,21 @@
     @include flexible(flex-start, flex-start, $fd: column, $gap: 4px);
   }
 
-  &__links {
+    &__links {
     padding: 0 20px 16px;
-    @include border($border-radius: (0 0 20px 20px));
-    background-color: color(color-background-light);
 
     animation: .3s closeLinks ease-out forwards;
+
+      &--primary{
+        background-color: color(color-background-light);
+        @include border($border-radius: (0 0 20px 20px));
+      }
+
+      &--secondary{
+        background-color: color(color-button-secondary_enable);
+        @include border(solid, color(color-border-secondary_enable), 3px);
+        @include border($border-radius: (0 0 20px 20px));
+      }
   }
 
   &--is-opened {
@@ -36,10 +58,21 @@
 
     #{$parent}__clothes-content {
       @include border($border-radius: (20px 20px 0 0));
+
+      &--secondary{
+        border: solid 3px color(color-border-secondary_enable);
+      }
     }
 
     #{$parent}__links {
       display: block;
+      @include border($border-radius: (0 0 20px 20px));
+
+      &--secondary{
+        border-bottom: solid 3px color(color-border-secondary_enable);
+        border-left: solid 3px color(color-border-secondary_enable);
+        border-right: solid 3px color(color-border-secondary_enable);
+      }
 
       animation: .3s openLinks ease-out forwards;
     }
