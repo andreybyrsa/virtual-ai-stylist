@@ -54,3 +54,17 @@
     gap: $gap;
   }
 }
+
+@mixin animatedBackground() {
+  @include position(fixed, 0, 0, 0, 0);
+
+  background: url("../images/lookLoaderBackground.png") repeat-y;
+  background-size: cover;
+  box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, .4);
+
+  animation: 188s infinityScroll infinite linear;
+
+  @keyframes infinityScroll {
+    to {background-position: 0 1000 * 10px}
+  }
+}
