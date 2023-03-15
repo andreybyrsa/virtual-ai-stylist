@@ -1,0 +1,28 @@
+.auth-page__content {
+  @include flexible($jc: flex-start, $fd:column, $ai: center);
+
+  &-input {
+    width: 100%;
+
+    @include flexible($fw:wrap, $gap: 20px);
+  }
+
+  &-avatar {
+    margin: 30px 0;
+  }
+
+  &-politics {
+    margin: 15px 0;
+
+    @include flexible($jc:center, $fw:wrap);
+  }
+
+  &-vk-icon {
+    background: color(color-background-blue);
+    @include border($border-radius: 30px);
+  }
+
+  &-icons {
+    @include flexible($gap: 25px)
+  }
+}
