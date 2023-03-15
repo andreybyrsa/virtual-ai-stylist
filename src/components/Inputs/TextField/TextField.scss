@@ -18,18 +18,6 @@
 
   @include typography(20px, 400, 24px);
 
-  &--secondary{
-    background: color(color-input-secondary);
-    @include border(solid, color(color-border-secondary_enable), 10px, 2px);
-
-    &::placeholder {
-      color: color(color-text-secondary);
-    }
-    &:focus{
-      color: color(color-text-secondary);
-    }
-  }
-
   &--primary{
     background: color(color-input-primary);
 
@@ -38,6 +26,16 @@
     }
   }
 
+  &--secondary{
+    background: color(color-input-secondary);
+    @include border(solid, color(color-border-secondary_enable), 10px, 2px);
+
+    color: color(color-text-secondary);
+
+    &::placeholder {
+      color: color(color-text-secondary);
+    }
+  }
 
   &--required {
     background-color: color(color-input-primary_error);
