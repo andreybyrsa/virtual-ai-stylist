@@ -28,7 +28,6 @@
     animation: .3s closeLinks ease-out forwards;
   }
 
-
   &--primary {
     #{$parent}__clothes-content {
       background-color: color(color-background-light);
@@ -52,8 +51,7 @@
 
     #{$parent}__links {
       background-color: color(color-button-secondary_enable);
-      @include border(solid, color(color-border-secondary_enable), 3px);
-      @include border($border-radius: (0 0 20px 20px));
+      @include border(solid, color(color-border-secondary_enable), (0 0 20px 20px), 3px);
     }
   }
 
