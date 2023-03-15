@@ -23,6 +23,8 @@ export type Colors = {
   'color-image-primary': string
   'color-input-primary': string
   'color-input-primary_error': string
+  'color-input-secondary': string
+  'color-input-secondary_error': string
   'color-text-error': string
   'color-text-primary': string
   'color-text-secondary': string
