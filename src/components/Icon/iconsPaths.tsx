@@ -129,24 +129,12 @@ const iconsPaths = {
     />
   ),
   arrowBack: (
-    <>
-      <path
-        id="arrowBack"
-        d="M1.8938 5.52423H16.0639C20.3669 5.52423 23.9014 8.92348 24.0691 13.2232C24.2464 17.7667 20.6109 21.5467 16.0639 21.5467H5.6438"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-      <path
-        id="arrowBack"
-        d="M5.87129 1.54675L1.8938 5.52425L5.87129 9.50169"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </>
+    <path
+      id="arrowBack"
+      d="M1.8938 5.52423H16.0639C20.3669 5.52423 23.9014 8.92348 24.0691 13.2232C24.2464 17.7667 20.6109 21.5467 16.0639 21.5467H5.6438 M5.87129 1.54675L1.8938 5.52425L5.87129 9.50169"
+      strokeWidth="2"
+      stroke="currentColor"
+    />
   ),
   avatar: (
     <path
