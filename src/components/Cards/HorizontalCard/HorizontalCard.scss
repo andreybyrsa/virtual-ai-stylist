@@ -10,7 +10,6 @@
 
     padding: 10px;
     @include border($border-radius: 20px);
-    background-color: color(color-background-light);
 
     @include flexible(center, space-between, $gap: 10px);
   }
@@ -25,23 +24,60 @@
 
   &__links {
     padding: 0 20px 16px;
-    @include border($border-radius: (0 0 20px 20px));
-    background-color: color(color-background-light);
 
     animation: .3s closeLinks ease-out forwards;
+  }
+
+  &--primary {
+    #{$parent}__clothes-content {
+      background-color: color(color-background-light);
+    }
+
+    #{$parent}__links {
+      background-color: color(color-background-light);
+      @include border($border-radius: (0 0 20px 20px));
+    }
+  }
+
+  &--secondary {
+    #{$parent}__clothes-content {
+      background-color: color(color-button-secondary_enable);
+      @include border(solid, color(color-border-secondary_enable), 20px, 3px);
+
+      #{$parent}__text{
+        color: color(color-text-secondary);
+      }
+    }
+
+    #{$parent}__links {
+      background-color: color(color-button-secondary_enable);
+      @include border(solid, color(color-border-secondary_enable), (0 0 20px 20px), 3px);
+    }
   }
 
   &--is-opened {
     height: min-content;
 
-    #{$parent}__clothes-content {
-      @include border($border-radius: (20px 20px 0 0));
-    }
-
     #{$parent}__links {
       display: block;
 
       animation: .3s openLinks ease-out forwards;
+    }
+  }
+
+  &--is-opened#{$parent}--primary {
+    #{$parent}__clothes-content {
+      @include border($border-radius: (20px 20px 0 0));
+    }
+  }
+
+  &--is-opened#{$parent}--secondary {
+    #{$parent}__clothes-content {
+      @include border(solid, color(color-border-secondary_enable), (20px 20px 0 0), (3px 3px 0 3px));
+    }
+
+    #{$parent}__links {
+      @include border(solid, color(color-border-secondary_enable), (0 0 20px 20px), (0 3px 3px 3px));
     }
   }
 }
