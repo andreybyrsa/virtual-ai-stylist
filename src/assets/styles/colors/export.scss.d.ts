@@ -1,4 +1,5 @@
 export type Colors = {
+  'color-background-blue': string
   'color-background-dark': string
   'color-background-dark_light': string
   'color-background-light': string
@@ -23,11 +24,13 @@ export type Colors = {
   'color-image-primary': string
   'color-input-primary': string
   'color-input-primary_error': string
+  'color-input-secondary': string
+  'color-input-secondary_error': string
   'color-text-error': string
+  'color-text-link': string
   'color-text-primary': string
   'color-text-secondary': string
   'color-text-tertiary': string
-  'color-text-link': string
   'color-textarea-primary': string
 }
 

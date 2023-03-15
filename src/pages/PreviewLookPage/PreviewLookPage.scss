@@ -1,0 +1,7 @@
+.preview-look-page {
+  @include animatedBackground();
+
+  &__content {
+    @include flexible(center, flex-start, $fd: column, $gap: 16px);
+  }
+}

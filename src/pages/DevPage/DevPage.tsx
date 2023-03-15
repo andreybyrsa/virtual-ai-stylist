@@ -98,6 +98,7 @@ function DevPage() {
         date="44.44.4444"
       />
       <HorizontalCard
+        type="secondary"
         imageSrc={jacket}
         cardInfo={{
           clothesName: 'Пиджак классический',
@@ -121,7 +122,14 @@ function DevPage() {
           />
         }
       />
-      <TextField placeholder="Классический стиль"></TextField>
+      <TextField
+        placeholder="Классический стиль"
+        type="primary"
+      ></TextField>
+      <TextField
+        placeholder="Классический стиль"
+        type="secondary"
+      />
     </PageLayout>
   )
 }
