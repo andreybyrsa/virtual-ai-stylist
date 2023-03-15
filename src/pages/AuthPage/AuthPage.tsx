@@ -32,28 +32,28 @@ function AuthPage() {
       footer={footer}
     >
       <Icon
-        className="auth-page__content--avatar"
+        className="auth-page__content-avatar"
         iconName="avatar"
         color={'color-icon-secondary'}
         viewBox={140}
         size={140}
       />
-      <div className="auth-page__content--input">
+      <div className="auth-page__content-input">
         <TextField label="Имя"></TextField>
         <PhoneField label="Номер телефона"></PhoneField>
       </div>
-      <div className="auth-page__content--politics">
+      <div className="auth-page__content-politics">
         <Typography variant="text-t4-regular">Регистрируясь, вы принимаете условия</Typography>
         <Typography variant="text-t4-regular">Политики конфиденциальности</Typography>
       </div>
-      <div className="auth-page__content--icon">
+      <div className="auth-page__content-icons">
         <Icon
           iconName="googleIcon"
           viewBox={45}
           size={48}
         />
         <Icon
-          className="auth-page__content-vkIcon"
+          className="auth-page__content-vk-icon"
           iconName="vkIcon"
           viewBox={45}
           size={48}

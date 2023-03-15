@@ -1,26 +1,28 @@
-.auth-page__content{
-  @include flexible($jc: flex-start, $fd:column, $ai: center, );
+.auth-page__content {
+  @include flexible($jc: flex-start, $fd:column, $ai: center);
 
-  &--input{
-    @include flexible($fw:wrap, $gap: 20px);
+  &-input {
     width: 100%;
+
+    @include flexible($fw:wrap, $gap: 20px);
   }
 
-  &--avatar{
+  &-avatar {
     margin: 30px 0;
   }
 
-  &--politics{
-    @include flexible($jc:center, $fw:wrap);
+  &-politics {
     margin: 15px 0;
+
+    @include flexible($jc:center, $fw:wrap);
   }
 
-  &-vkIcon{
-    background: #4D76A1;
-    border-radius: 30px;
+  &-vk-icon {
+    background: color(color-background-blue);
+    @include border($border-radius: 30px);
   }
 
-  &--icon{
-    @include flexible($gap:25px)
+  &-icons {
+    @include flexible($gap: 25px)
   }
 }
