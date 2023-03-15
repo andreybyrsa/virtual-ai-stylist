@@ -13,6 +13,7 @@ function TextField({
 
   label,
   placeholder = 'Введите текст',
+  type = 'primary',
 
   required,
   maxLength = 15,
@@ -27,6 +28,7 @@ function TextField({
 
   const TextFieldClassName = classNames(
     'text-field',
+    `text-field--${type}`,
     {
       'text-field--required': isRequired,
     },
