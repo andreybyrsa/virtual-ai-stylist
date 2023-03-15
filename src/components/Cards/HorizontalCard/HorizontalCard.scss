@@ -12,20 +12,6 @@
     @include border($border-radius: 20px);
 
     @include flexible(center, space-between, $gap: 10px);
-
-    &--primary{
-      background-color: color(color-background-light);
-
-    }
-
-    &--secondary{
-      background-color: color(color-button-secondary_enable);
-      @include border(solid, color(color-border-secondary_enable), 20px, 3px);
-
-      .horizontal-card__text{
-        color: color(color-text-secondary);
-      }
-    }
   }
 
   &__description {
@@ -36,45 +22,64 @@
     @include flexible(flex-start, flex-start, $fd: column, $gap: 4px);
   }
 
-    &__links {
+  &__links {
     padding: 0 20px 16px;
 
     animation: .3s closeLinks ease-out forwards;
+  }
 
-      &--primary{
-        background-color: color(color-background-light);
-        @include border($border-radius: (0 0 20px 20px));
-      }
 
-      &--secondary{
-        background-color: color(color-button-secondary_enable);
-        @include border(solid, color(color-border-secondary_enable), 3px);
-        @include border($border-radius: (0 0 20px 20px));
+  &--primary {
+    #{$parent}__clothes-content {
+      background-color: color(color-background-light);
+    }
+
+    #{$parent}__links {
+      background-color: color(color-background-light);
+      @include border($border-radius: (0 0 20px 20px));
+    }
+  }
+
+  &--secondary {
+    #{$parent}__clothes-content {
+      background-color: color(color-button-secondary_enable);
+      @include border(solid, color(color-border-secondary_enable), 20px, 3px);
+
+      #{$parent}__text{
+        color: color(color-text-secondary);
       }
+    }
+
+    #{$parent}__links {
+      background-color: color(color-button-secondary_enable);
+      @include border(solid, color(color-border-secondary_enable), 3px);
+      @include border($border-radius: (0 0 20px 20px));
+    }
   }
 
   &--is-opened {
     height: min-content;
 
+    #{$parent}__links {
+      display: block;
+
+      animation: .3s openLinks ease-out forwards;
+    }
+  }
+
+  &--is-opened#{$parent}--primary {
     #{$parent}__clothes-content {
       @include border($border-radius: (20px 20px 0 0));
+    }
+  }
 
-      &--secondary{
-        border: solid 3px color(color-border-secondary_enable);
-      }
+  &--is-opened#{$parent}--secondary {
+    #{$parent}__clothes-content {
+      @include border(solid, color(color-border-secondary_enable), (20px 20px 0 0), (3px 3px 0 3px));
     }
 
     #{$parent}__links {
-      display: block;
-      @include border($border-radius: (0 0 20px 20px));
-
-      &--secondary{
-        border-bottom: solid 3px color(color-border-secondary_enable);
-        border-left: solid 3px color(color-border-secondary_enable);
-        border-right: solid 3px color(color-border-secondary_enable);
-      }
-
-      animation: .3s openLinks ease-out forwards;
+      @include border(solid, color(color-border-secondary_enable), (0 0 20px 20px), (0 3px 3px 3px));
     }
   }
 }

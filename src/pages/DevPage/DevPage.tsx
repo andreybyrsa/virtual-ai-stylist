@@ -98,6 +98,7 @@ function DevPage() {
         date="44.44.4444"
       />
       <HorizontalCard
+        type="secondary"
         imageSrc={jacket}
         cardInfo={{
           clothesName: 'Пиджак классический',

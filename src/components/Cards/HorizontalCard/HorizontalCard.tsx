@@ -17,18 +17,12 @@ function HorizontalCard({
   const [isOpened, setIsOpened] = useState<boolean>(false)
   const HorizontalCardClassName = classNames(
     'horizontal-card',
+    `horizontal-card--${type}`,
     {
       'horizontal-card--is-opened': isOpened,
     },
     className,
   )
-
-  const ClothesClassName = classNames(
-    'horizontal-card__clothes-content',
-    `horizontal-card__clothes-content--${type}`,
-  )
-
-  const LinksClassName = classNames('horizontal-card__links', `horizontal-card__links--${type}`)
 
   const CardDescription = Object.values(cardInfo).sort((a, b) => {
     if (a === cardInfo.clothesName && b) {
@@ -48,7 +42,7 @@ function HorizontalCard({
       className={HorizontalCardClassName}
       onClick={onHandlerOpen}
     >
-      <div className={ClothesClassName}>
+      <div className="horizontal-card__clothes-content">
         <Image
           imageSrc={imageSrc}
           width={90}
@@ -67,7 +61,7 @@ function HorizontalCard({
           ))}
         </div>
       </div>
-      <div className={LinksClassName}>
+      <div className="horizontal-card__links">
         {links.map((elem, index) => (
           <Typography
             key={index}
