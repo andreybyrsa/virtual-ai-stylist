@@ -7,6 +7,7 @@ import IndexPage from '@Pages/IndexPage'
 import LookPage from '@Pages/LookPage'
 import OnBoardingPage from '@Pages/OnBoardingPage'
 import PreviewLookPage from '@Pages/PreviewLookPage'
+import ProfilePage from '@Pages/ProfilePage'
 import UploadLookPage from '@Pages/UploadLookPage'
 
 const router = createBrowserRouter([
@@ -41,6 +42,10 @@ const router = createBrowserRouter([
   {
     path: '/preview-look',
     element: <PreviewLookPage />,
+  },
+  {
+    path: '/profile',
+    element: <ProfilePage />,
   },
 ])
 
