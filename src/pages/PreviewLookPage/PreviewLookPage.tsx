@@ -1,9 +1,11 @@
-import { useMemo } from 'react'
+import { useMemo, useState } from 'react'
+import { NavLink } from 'react-router-dom'
 
 import Button from '@Components/Button'
 import HorizontalCard from '@Components/Cards/HorizontalCard'
 import IconButton from '@Components/IconButton'
 import TextField from '@Components/Inputs/TextField'
+import LookLoader from '@Components/Loaders/LookLoader'
 
 import { jacket } from '@Assets/images'
 
@@ -21,18 +23,28 @@ const cards = [
 ]
 
 function PreviewLookPage() {
+  const [refreshLook, setRefreshLook] = useState<boolean>(false)
+
+  const onHandlerRefresh = () => {
+    setRefreshLook(true)
+    setTimeout(() => setRefreshLook(false), 1500)
+  }
+
   const header = useMemo(() => {
     return (
       <Header
         leftSideSlot={
-          <IconButton
-            type="secondary"
-            iconName="arrowBack"
-            viewBox={25}
-          />
+          <NavLink to="/upload-look">
+            <IconButton
+              type="secondary"
+              iconName="arrowBack"
+              viewBox={25}
+            />
+          </NavLink>
         }
         rightSideSlot={
           <IconButton
+            onClick={onHandlerRefresh}
             type="secondary"
             iconName="refresh"
             viewBox={30}
@@ -54,6 +66,11 @@ function PreviewLookPage() {
       </Footer>
     )
   }, [])
+
+  if (refreshLook) {
+    return <LookLoader />
+  }
+
   return (
     <PageLayout
       className="preview-look-page"
