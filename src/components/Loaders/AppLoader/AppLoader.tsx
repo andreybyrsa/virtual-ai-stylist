@@ -3,7 +3,7 @@ import classNames from 'classnames'
 import Image from '@Components/Image'
 import Typography from '@Components/Typography'
 
-import { logo } from '@Assets/Images'
+import { logo } from '@Assets/images'
 
 import './AppLoader.scss'
 import AppLoaderProps from './AppLoader.types'

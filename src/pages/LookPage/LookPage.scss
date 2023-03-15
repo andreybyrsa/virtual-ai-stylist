@@ -1,0 +1,7 @@
+.look-page__content{
+  @include flexible(center, flex-start, $fd: column, $gap: 16px);
+
+  &-cards{
+    @include flexible($fw:wrap, $gap: 16px);
+  }
+}

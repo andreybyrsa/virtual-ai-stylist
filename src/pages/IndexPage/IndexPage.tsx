@@ -6,7 +6,7 @@ import AppLoader from '@Components/Loaders/AppLoader'
 import NavigationSideBar from '@Components/NavigationComponents/NavigationSideBar'
 import Typography from '@Components/Typography'
 
-import { jacket } from '@Assets/Images'
+import { jacket } from '@Assets/images'
 
 import Footer from '@Layouts/Footer'
 import Header from '@Layouts/Header'
