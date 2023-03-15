@@ -1,13 +1,24 @@
 import { useMemo } from 'react'
 
 import Button from '@Components/Button'
+import HorizontalCard from '@Components/Cards/HorizontalCard'
 import IconButton from '@Components/IconButton'
+import TextField from '@Components/Inputs/TextField'
+
+import { jacket } from '@Assets/images'
 
 import Footer from '@Layouts/Footer'
 import Header from '@Layouts/Header'
 import PageLayout from '@Layouts/PageLayout'
 
 import './PreviewLookPage.scss'
+
+const cards = [
+  { id: 0, src: jacket },
+  { id: 1, src: jacket },
+  { id: 2, src: jacket },
+  { id: 3, src: jacket },
+]
 
 function PreviewLookPage() {
   const header = useMemo(() => {
@@ -46,9 +57,32 @@ function PreviewLookPage() {
   return (
     <PageLayout
       className="preview-look-page"
+      contentClassName="preview-look-page__content"
       header={header}
       footer={footer}
-    ></PageLayout>
+    >
+      <TextField
+        type="secondary"
+        required
+      />
+      {cards.map((elem) => (
+        <HorizontalCard
+          key={elem.id}
+          type="secondary"
+          imageSrc={elem.src}
+          cardInfo={{
+            clothesName: 'Пиджак классический',
+            clothesColor: 'Черный цвет',
+            clothesGender: 'Мужской',
+          }}
+          links={[
+            'https://www.detmir.ru/catalog/index/name/.',
+            'https://www.detmir.ru/catalog/index/name/.',
+            'https://www.detmir.ru/catalog/index/name/.',
+          ]}
+        />
+      ))}
+    </PageLayout>
   )
 }
 
