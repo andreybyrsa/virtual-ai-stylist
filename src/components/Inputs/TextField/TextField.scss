@@ -14,13 +14,27 @@
   width: 100%;
   @include fixedHeight(44px);
   padding: 0 20px;
-  background-color: color(color-input-primary);
   @include border($border-radius: 8px);
 
   @include typography(20px, 400, 24px);
 
-  &::placeholder {
-    color: color(color-text-primary);
+  &--primary{
+    background: color(color-input-primary);
+
+    &::placeholder {
+      color: color(color-text-primary);
+    }
+  }
+
+  &--secondary{
+    background: color(color-input-secondary);
+    @include border(solid, color(color-border-secondary_enable), 10px, 2px);
+
+    color: color(color-text-secondary);
+
+    &::placeholder {
+      color: color(color-text-secondary);
+    }
   }
 
   &--required {

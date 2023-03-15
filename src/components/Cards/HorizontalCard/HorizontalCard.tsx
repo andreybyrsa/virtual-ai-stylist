@@ -7,10 +7,17 @@ import Typography from '@Components/Typography'
 import './HorizontalCard.scss'
 import HorizontalCardProps from './HorizontalCard.types'
 
-function HorizontalCard({ className, imageSrc, cardInfo, links }: HorizontalCardProps) {
+function HorizontalCard({
+  className,
+  imageSrc,
+  cardInfo,
+  links,
+  type = 'primary',
+}: HorizontalCardProps) {
   const [isOpened, setIsOpened] = useState<boolean>(false)
   const HorizontalCardClassName = classNames(
     'horizontal-card',
+    `horizontal-card--${type}`,
     {
       'horizontal-card--is-opened': isOpened,
     },
@@ -45,6 +52,7 @@ function HorizontalCard({ className, imageSrc, cardInfo, links }: HorizontalCard
         <div className="horizontal-card__description">
           {CardDescription.map((elem, index) => (
             <Typography
+              className="horizontal-card__text"
               key={index}
               variant="text-t2-medium"
             >
