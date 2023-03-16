@@ -2,7 +2,7 @@ import { PayloadAction, createSlice } from '@reduxjs/toolkit'
 
 import { User } from '@Domain/user'
 
-import initialState from '@Store/reducers/user/initialState'
+import initialState from './initialState'
 
 const userSlice = createSlice({
   name: 'user',
