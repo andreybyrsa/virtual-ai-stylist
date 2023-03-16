@@ -178,7 +178,7 @@ const iconsPaths = {
     <path
       id="navArrow"
       d="M1.92529 1L9.94662 7L1.92529 13"
-      stroke="#264A5A"
+      stroke="currentColor"
     />
   ),
   appleIcon: (
