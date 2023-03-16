@@ -1,0 +1,10 @@
+.profile-page{
+
+  &__content{
+    @include flexible($fd: column, $gap: 16px);
+
+    &-profile{
+      @include flexible($ai:center, $gap:8px);
+    }
+  }
+}
