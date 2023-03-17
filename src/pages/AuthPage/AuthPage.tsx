@@ -39,8 +39,15 @@ function AuthPage() {
         size={140}
       />
       <div className="auth-page__content-input">
-        <TextField label="Имя"></TextField>
-        <PhoneField label="Номер телефона"></PhoneField>
+        <TextField
+          label="Имя"
+          placeholder="Введите имя"
+          required
+        />
+        <PhoneField
+          label="Номер телефона"
+          required
+        />
       </div>
       <div className="auth-page__content-politics">
         <Typography variant="text-t4-regular">Регистрируясь, вы принимаете условия</Typography>

@@ -1,5 +1,5 @@
 import { useCallback, useMemo, useState } from 'react'
-import { NavLink } from 'react-router-dom'
+import { NavLink, Navigate } from 'react-router-dom'
 import SwiperCore from 'swiper'
 
 import Button from '@Components/Button'
@@ -25,7 +25,7 @@ function OnBoardingPage() {
     return (
       <Header
         rightSideSlot={
-          <NavLink to="/">
+          <NavLink to="/auth">
             <Typography variant="text-t2-medium">Пропустить</Typography>
           </NavLink>
         }
@@ -40,6 +40,10 @@ function OnBoardingPage() {
       </Footer>
     )
   }, [currentIndex, onHandlerSwipe])
+
+  if (currentIndex > 2) {
+    return <Navigate to="/auth" />
+  }
 
   return (
     <PageLayout

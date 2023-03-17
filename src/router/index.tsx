@@ -12,8 +12,20 @@ import UploadLookPage from '@Pages/UploadLookPage'
 
 const router = createBrowserRouter([
   {
+    path: '/auth',
+    element: <AuthPage />,
+  },
+  {
+    path: '/on-boarding',
+    element: <OnBoardingPage />,
+  },
+  {
     path: '/',
     element: <IndexPage />,
+  },
+  {
+    path: '/dev',
+    element: <DevPage />,
   },
   {
     path: '/favourites',
@@ -22,18 +34,6 @@ const router = createBrowserRouter([
   {
     path: '/look',
     element: <LookPage />,
-  },
-  {
-    path: '/on-boarding',
-    element: <OnBoardingPage />,
-  },
-  {
-    path: '/auth',
-    element: <AuthPage />,
-  },
-  {
-    path: '/dev',
-    element: <DevPage />,
   },
   {
     path: '/upload-look',
