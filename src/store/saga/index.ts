@@ -1,4 +1,4 @@
-import { all, call, put, select, takeEvery } from 'redux-saga/effects'
+import { all, call, put, select, takeLeading } from 'redux-saga/effects'
 
 import { ApiUser } from '@Domain/apiUser'
 import { User } from '@Domain/user'
@@ -24,7 +24,7 @@ function* setUserWorker() {
 }
 
 function* watchAllSaga() {
-  yield all([takeEvery(setUser, setUserWorker)])
+  yield all([takeLeading(setUser, setUserWorker)])
 }
 
 export default function* rootSaga() {
