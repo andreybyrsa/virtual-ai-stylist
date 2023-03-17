@@ -1,4 +1,5 @@
 import { useMemo } from 'react'
+import { useSelector } from 'react-redux'
 
 import Button from '@Components/Button'
 import Cell from '@Components/Cell'
@@ -10,9 +11,13 @@ import Footer from '@Layouts/Footer'
 import Header from '@Layouts/Header'
 import PageLayout from '@Layouts/PageLayout'
 
+import UserSelector from '@Store/reducers/user/UserSelector'
+
 import './ProfilePage.scss'
 
 function ProfilePage() {
+  const user = useSelector(UserSelector())
+
   const header = useMemo(() => {
     return <Header leftSideSlot={<Typography variant="title-t1-bold">Профиль</Typography>} />
   }, [])
@@ -39,8 +44,9 @@ function ProfilePage() {
             size={50}
             viewBox={140}
           />
-          <Typography variant="title-t3-medium">Иван</Typography>
+          <Typography variant="title-t3-medium">{user?.userName}</Typography>
         </div>
+        <Typography variant="title-t3-medium">Телефон: {user?.phoneNumber}</Typography>
 
         <Cell
           title="Избранное"

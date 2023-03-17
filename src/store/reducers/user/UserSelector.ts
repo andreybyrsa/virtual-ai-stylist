@@ -1,9 +1,7 @@
-import { useSelector } from 'react-redux'
-
 import { RootState } from '@Store/index'
 
 function UserSelector() {
-  return useSelector((state: RootState) => state.user.user)
+  return (state: RootState) => state.user.user
 }
 
 export default UserSelector

@@ -1,7 +1,9 @@
-import userSelector from '@Store/reducers/user/UserSelector'
+import { useSelector } from 'react-redux'
+
+import UserSelector from '@Store/reducers/user/UserSelector'
 
 const useAuth = () => {
-  const user = userSelector()
+  const user = useSelector(UserSelector())
   return !!user?.id
 }
 

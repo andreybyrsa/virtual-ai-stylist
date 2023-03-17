@@ -27,6 +27,7 @@ function AuthPage() {
         userName,
         phoneNumber,
         avatar: null,
+        passWord: '123',
         id: null,
       }),
     )
