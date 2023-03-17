@@ -1,4 +1,5 @@
-import { useMemo } from 'react'
+import { useCallback, useMemo, useState } from 'react'
+import { useDispatch } from 'react-redux'
 
 import Button from '@Components/Button'
 import Icon from '@Components/Icon'
@@ -10,16 +11,37 @@ import Footer from '@Layouts/Footer'
 import Header from '@Layouts/Header'
 import PageLayout from '@Layouts/PageLayout'
 
+import { setUser } from '@Store/reducers/user/UserReducer'
+
 import './AuthPage.scss'
 
 function AuthPage() {
+  const [userName, setUserName] = useState<string>('')
+  const [phoneNumber, setPhoneNumber] = useState<string>('')
+
+  const dispatch = useDispatch()
+
+  const onHandlerSubmit = useCallback(() => {
+    dispatch(
+      setUser({
+        userName,
+        phoneNumber,
+        avatar: null,
+        id: null,
+      }),
+    )
+  }, [dispatch, phoneNumber, userName])
+
   const footer = useMemo(() => {
     return (
       <Footer>
-        <Button disabled />
+        <Button
+          onClick={onHandlerSubmit}
+          disabled={!phoneNumber || !userName}
+        />
       </Footer>
     )
-  }, [])
+  }, [onHandlerSubmit, phoneNumber, userName])
 
   const header = useMemo(() => {
     return <Header leftSideSlot={<Typography variant="title-t1-bold">Авторизация</Typography>} />
@@ -42,10 +64,12 @@ function AuthPage() {
         <TextField
           label="Имя"
           placeholder="Введите имя"
+          setValue={setUserName}
           required
         />
         <PhoneField
           label="Номер телефона"
+          setCurrentValue={setPhoneNumber}
           required
         />
       </div>

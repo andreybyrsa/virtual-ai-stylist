@@ -1,6 +1,6 @@
 export type User = {
   userName: string
-  id: string
+  id: string | null
   phoneNumber: string
-  avatar: string
+  avatar: string | null
 }
