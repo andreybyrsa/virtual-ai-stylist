@@ -53,6 +53,7 @@ function ProfilePage() {
           after={
             <Icon
               iconName="navArrow"
+              color="color-icon-secondary"
               size={15}
               viewBox={12}
             />
@@ -66,6 +67,7 @@ function ProfilePage() {
           after={
             <Icon
               iconName="navArrow"
+              color="color-icon-secondary"
               size={15}
               viewBox={12}
             />
@@ -77,6 +79,7 @@ function ProfilePage() {
           after={
             <Icon
               iconName="navArrow"
+              color="color-icon-secondary"
               size={15}
               viewBox={12}
             />
