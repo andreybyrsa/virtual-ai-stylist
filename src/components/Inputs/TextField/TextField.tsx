@@ -70,7 +70,7 @@ function TextField({
         type="text"
         {...register('textField', {
           required: !!required,
-          pattern: /^[a-zA-Z][a-zA-Z0-9]*[._-]?[a-zA-Z0-9]+$/,
+          pattern: /^[а-яА-Я a-zA-z][а-яА-Я0-9 a-zA-Z0-9]*[._-]?[а-яА-Я0-9 a-zA-Z0-9]+$/,
           maxLength: maxLength,
           minLength: minLength,
           onChange: onHandlerChange,
