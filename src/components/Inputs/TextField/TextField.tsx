@@ -1,4 +1,5 @@
 import classNames from 'classnames'
+import { ChangeEvent } from 'react'
 import { useForm } from 'react-hook-form'
 
 import Typography from '@Components/Typography'
@@ -14,6 +15,8 @@ function TextField({
   label,
   placeholder = 'Введите текст',
   type = 'primary',
+
+  setValue,
 
   required,
   maxLength = 15,
@@ -45,6 +48,12 @@ function TextField({
       : 'Форма обязательна к заполнению'
   }
 
+  const onHandlerChange = (event: ChangeEvent<HTMLInputElement>) => {
+    if (setValue) {
+      setValue(event.target.value)
+    }
+  }
+
   return (
     <div className="text-field-wrapper">
       {label && (
@@ -61,9 +70,10 @@ function TextField({
         type="text"
         {...register('textField', {
           required: !!required,
-          pattern: /^[a-zA-Z][a-zA-Z0-9]*[._-]?[a-zA-Z0-9]+$/,
+          pattern: /^[а-яА-Я a-zA-z][а-яА-Я0-9 a-zA-Z0-9]*[._-]?[а-яА-Я0-9 a-zA-Z0-9]+$/,
           maxLength: maxLength,
           minLength: minLength,
+          onChange: onHandlerChange,
         })}
       />
       {errors?.textField && (

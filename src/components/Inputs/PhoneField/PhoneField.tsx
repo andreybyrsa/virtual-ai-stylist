@@ -19,6 +19,8 @@ function PhoneField({
   label,
   placeholder = 'Введите номер телефона',
 
+  setCurrentValue,
+
   required,
 }: PhoneFieldProps) {
   const {
@@ -49,14 +51,20 @@ function PhoneField({
 
   const onHandlerChange = (event: ChangeEvent<HTMLInputElement>) => {
     const currentEventValue = event.target.value.replaceAll(/[ \-()]/g, '')
+    if (setCurrentValue) {
+      setCurrentValue(currentEventValue)
+    }
+
     if (currentEventValue.length > 12) {
       setValue('phoneField', getValues('phoneField').slice(0, 20))
       return
     }
+
     if (currentEventValue === '+' || !currentEventValue) {
       setValue('phoneField', '+7')
       return
     }
+
     if (currentEventValue.length > currentPhone.length) {
       setCurrentPhone((prevState) => prevState + currentEventValue.slice(-1))
       setIsRequired(false)

@@ -1,4 +1,5 @@
 import classNames from 'classnames'
+import { ChangeEvent } from 'react'
 import { useForm } from 'react-hook-form'
 
 import Icon from '@Components/Icon'
@@ -16,6 +17,8 @@ function NumberField({
 
   label,
   placeholder = 'Введите проверочный код',
+
+  setValue,
 
   required,
   maxLength = 4,
@@ -37,6 +40,12 @@ function NumberField({
     className,
   )
 
+  const onHandlerChange = (event: ChangeEvent<HTMLInputElement>) => {
+    if (setValue) {
+      setValue(event.target.value)
+    }
+  }
+
   return (
     <div className="number-field-wrapper">
       {label && (
@@ -57,6 +66,7 @@ function NumberField({
             pattern: /^[0-9]+$/,
             maxLength: maxLength,
             minLength: minLength,
+            onChange: onHandlerChange,
           })}
         />
         <Icon
