@@ -1,11 +1,14 @@
 import { useCallback, useMemo, useState } from 'react'
 import { useDispatch } from 'react-redux'
+import { Navigate } from 'react-router-dom'
 
 import Button from '@Components/Button'
 import Icon from '@Components/Icon'
 import PhoneField from '@Components/Inputs/PhoneField'
 import TextField from '@Components/Inputs/TextField'
 import Typography from '@Components/Typography'
+
+import useAuth from '@Hooks/useAuth'
 
 import Footer from '@Layouts/Footer'
 import Header from '@Layouts/Header'
@@ -18,6 +21,8 @@ import './AuthPage.scss'
 function AuthPage() {
   const [userName, setUserName] = useState<string>('')
   const [phoneNumber, setPhoneNumber] = useState<string>('')
+
+  const isAuth = useAuth()
 
   const dispatch = useDispatch()
 
@@ -47,6 +52,10 @@ function AuthPage() {
   const header = useMemo(() => {
     return <Header leftSideSlot={<Typography variant="title-t1-bold">Авторизация</Typography>} />
   }, [])
+
+  if (isAuth) {
+    return <Navigate to="/" />
+  }
 
   return (
     <PageLayout

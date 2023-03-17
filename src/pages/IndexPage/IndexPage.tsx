@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react'
+import { useMemo } from 'react'
 
 import Card from '@Components/Cards/Card'
 import Icon from '@Components/Icon'
@@ -23,12 +23,7 @@ const cards = [
 ]
 
 function IndexPage() {
-  const [isAuth, setIsAuth] = useState<boolean>(false)
-
-  const userId = useAuth()
-  if (userId) {
-    setIsAuth((prevState) => !prevState)
-  }
+  const isAuth = useAuth()
 
   const header = useMemo(() => {
     return (
