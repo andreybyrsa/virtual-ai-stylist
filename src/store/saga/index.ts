@@ -18,7 +18,7 @@ function* setUserWorker() {
       userName: apiUser.userName,
       passWord: apiUser.passWord,
       phoneNumber: apiUser.phoneNumber,
-      avatar: apiUser.profilePic,
+      profilePic: apiUser.profilePic,
     }),
   )
 }

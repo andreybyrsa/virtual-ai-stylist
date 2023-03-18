@@ -4,6 +4,7 @@ import { useSelector } from 'react-redux'
 import Button from '@Components/Button'
 import Cell from '@Components/Cell'
 import Icon from '@Components/Icon'
+import Image from '@Components/Image'
 import NavigationSideBar from '@Components/NavigationComponents/NavigationSideBar'
 import Typography from '@Components/Typography'
 
@@ -38,15 +39,18 @@ function ProfilePage() {
     >
       <div className="profile-page__content">
         <div className="profile-page__content-profile">
-          <Icon
-            iconName="avatar"
-            color="color-icon-secondary"
-            size={50}
-            viewBox={140}
+          <Image
+            className="profile-page__content-avatar"
+            width={70}
+            height={70}
+            imageSrc={`${user?.profilePic}`}
+            alt="avatar"
           />
-          <Typography variant="title-t3-medium">{user?.userName}</Typography>
+          <div>
+            <Typography variant="title-t3-medium">Имя: {user?.userName}</Typography>
+            <Typography variant="title-t3-medium">Телефон: {user?.phoneNumber}</Typography>
+          </div>
         </div>
-        <Typography variant="title-t3-medium">Телефон: {user?.phoneNumber}</Typography>
 
         <Cell
           title="Избранное"
