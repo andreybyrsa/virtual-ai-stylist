@@ -1,7 +1,8 @@
-import { useMemo } from 'react'
+import { ChangeEvent, useEffect, useMemo, useRef, useState } from 'react'
 
 import Button from '@Components/Button'
 import Icon from '@Components/Icon'
+import Image from '@Components/Image'
 import PhoneField from '@Components/Inputs/PhoneField'
 import TextField from '@Components/Inputs/TextField'
 import Typography from '@Components/Typography'
@@ -13,6 +14,24 @@ import PageLayout from '@Layouts/PageLayout'
 import './AuthPage.scss'
 
 function AuthPage() {
+  const [imageFile, setImageFile] = useState<File>()
+  const [currentImage, setCurrentImage] = useState<string>('')
+  const inputRef = useRef<HTMLInputElement>(null)
+
+  const onHandlerFileUpload = () => {
+    inputRef.current?.click()
+  }
+
+  const onHandlerChangeValue = (event: ChangeEvent<HTMLInputElement>) => {
+    setImageFile(event.target.files?.[0])
+  }
+
+  useEffect(() => {
+    if (imageFile) {
+      setCurrentImage(URL.createObjectURL(imageFile))
+    }
+  }, [imageFile])
+
   const footer = useMemo(() => {
     return (
       <Footer>
@@ -31,12 +50,33 @@ function AuthPage() {
       header={header}
       footer={footer}
     >
-      <Icon
-        className="auth-page__content-avatar"
-        iconName="avatar"
-        color={'color-icon-secondary'}
-        viewBox={140}
-        size={140}
+      <button
+        className="auth-page__upload-button"
+        onClick={onHandlerFileUpload}
+      >
+        {imageFile ? (
+          <Image
+            className="auth-page__content-avatar"
+            imageSrc={currentImage}
+            width={140}
+            height={140}
+            alt="avatar"
+          />
+        ) : (
+          <Icon
+            className="auth-page__content-avatar"
+            iconName="avatar"
+            color={'color-icon-secondary'}
+            viewBox={140}
+            size={140}
+          />
+        )}
+      </button>
+      <input
+        className="auth-page__file-input"
+        onChange={onHandlerChangeValue}
+        type="file"
+        ref={inputRef}
       />
       <div className="auth-page__content-input">
         <TextField label="Имя"></TextField>
