@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react'
+import { useMemo } from 'react'
 
 import Card from '@Components/Cards/Card'
 import Icon from '@Components/Icon'
@@ -7,6 +7,8 @@ import NavigationSideBar from '@Components/NavigationComponents/NavigationSideBa
 import Typography from '@Components/Typography'
 
 import { jacket } from '@Assets/images'
+
+import useAuth from '@Hooks/useAuth'
 
 import Footer from '@Layouts/Footer'
 import Header from '@Layouts/Header'
@@ -21,11 +23,7 @@ const cards = [
 ]
 
 function IndexPage() {
-  const [isLoading, setIsLoading] = useState<boolean>(true)
-
-  useEffect(() => {
-    setTimeout(() => setIsLoading(false), 1500)
-  }, [])
+  const isAuth = useAuth()
 
   const header = useMemo(() => {
     return (
@@ -51,7 +49,7 @@ function IndexPage() {
     )
   }, [])
 
-  if (isLoading) {
+  if (!isAuth) {
     return <AppLoader />
   }
 

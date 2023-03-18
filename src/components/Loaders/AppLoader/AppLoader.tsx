@@ -1,4 +1,6 @@
 import classNames from 'classnames'
+import { useEffect, useState } from 'react'
+import { Navigate } from 'react-router-dom'
 
 import Image from '@Components/Image'
 import Typography from '@Components/Typography'
@@ -9,7 +11,17 @@ import './AppLoader.scss'
 import AppLoaderProps from './AppLoader.types'
 
 function AppLoader({ className }: AppLoaderProps) {
+  const [redirect, setRedirect] = useState<boolean>(false)
   const AppLoaderClassName = classNames('app-loader', className)
+
+  useEffect(() => {
+    setTimeout(() => setRedirect(true), 2000)
+  }, [])
+
+  if (redirect) {
+    return <Navigate to="/on-boarding" />
+  }
+
   return (
     <div className={AppLoaderClassName}>
       <Image

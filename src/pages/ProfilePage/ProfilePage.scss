@@ -3,6 +3,10 @@
   &__content{
     @include flexible($fd: column, $gap: 16px);
 
+    &-avatar {
+      @include border($border-radius: 100px);
+    }
+
     &-profile{
       @include flexible($ai:center, $gap:8px);
     }
