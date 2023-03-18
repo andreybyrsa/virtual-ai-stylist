@@ -1,9 +1,10 @@
-import { useCallback, useMemo, useState } from 'react'
+import { ChangeEvent, useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { Navigate } from 'react-router-dom'
 
 import Button from '@Components/Button'
 import Icon from '@Components/Icon'
+import Image from '@Components/Image'
 import PhoneField from '@Components/Inputs/PhoneField'
 import TextField from '@Components/Inputs/TextField'
 import Typography from '@Components/Typography'
@@ -19,6 +20,10 @@ import { setUser } from '@Store/reducers/user/UserReducer'
 import './AuthPage.scss'
 
 function AuthPage() {
+  const [imageFile, setImageFile] = useState<File>()
+  const [currentImage, setCurrentImage] = useState<string>('')
+  const inputRef = useRef<HTMLInputElement>(null)
+
   const [userName, setUserName] = useState<string>('')
   const [phoneNumber, setPhoneNumber] = useState<string>('')
 
@@ -31,12 +36,26 @@ function AuthPage() {
       setUser({
         userName,
         phoneNumber,
-        avatar: null,
+        profilePic: currentImage,
         passWord: '123',
         id: null,
       }),
     )
-  }, [dispatch, phoneNumber, userName])
+  }, [currentImage, dispatch, phoneNumber, userName])
+
+  const onHandlerFileUpload = () => {
+    inputRef.current?.click()
+  }
+
+  const onHandlerChangeValue = (event: ChangeEvent<HTMLInputElement>) => {
+    setImageFile(event.target.files?.[0])
+  }
+
+  useEffect(() => {
+    if (imageFile) {
+      setCurrentImage(URL.createObjectURL(imageFile))
+    }
+  }, [imageFile])
 
   const footer = useMemo(() => {
     return (
@@ -63,17 +82,37 @@ function AuthPage() {
       header={header}
       footer={footer}
     >
-      <Icon
-        className="auth-page__content-avatar"
-        iconName="avatar"
-        color={'color-icon-secondary'}
-        viewBox={140}
-        size={140}
+      <button
+        className="auth-page__upload-button"
+        onClick={onHandlerFileUpload}
+      >
+        {imageFile ? (
+          <Image
+            className="auth-page__content-avatar"
+            imageSrc={currentImage}
+            width={140}
+            height={140}
+            alt="avatar"
+          />
+        ) : (
+          <Icon
+            className="auth-page__content-avatar"
+            iconName="avatar"
+            color={'color-icon-secondary'}
+            viewBox={140}
+            size={140}
+          />
+        )}
+      </button>
+      <input
+        className="auth-page__file-input"
+        onChange={onHandlerChangeValue}
+        type="file"
+        ref={inputRef}
       />
       <div className="auth-page__content-input">
         <TextField
           label="Имя"
-          placeholder="Введите имя"
           setValue={setUserName}
           required
         />
