@@ -63,7 +63,9 @@ function AuthPage() {
         <Button
           onClick={onHandlerSubmit}
           disabled={!phoneNumber || !userName}
-        />
+        >
+          Войти
+        </Button>
       </Footer>
     )
   }, [onHandlerSubmit, phoneNumber, userName])
