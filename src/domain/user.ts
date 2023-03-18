@@ -3,5 +3,5 @@ export type User = {
   id: string | null
   phoneNumber: string
   passWord: string
-  avatar: string | null
+  profilePic: string | null
 }
