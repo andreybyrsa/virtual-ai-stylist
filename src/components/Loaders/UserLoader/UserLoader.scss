@@ -1,0 +1,9 @@
+.user-loader {
+  @include position(fixed, 0, 0, 0, 0);
+
+  @include flexible(center, center);
+
+  &__text {
+    @include typography(20px, 600, 32px);
+  }
+}
