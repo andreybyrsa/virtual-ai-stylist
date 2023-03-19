@@ -4,6 +4,7 @@
     @include flexible($fd: column, $gap: 16px);
 
     &-avatar {
+      @include fixedWidth(70px);
       @include border($border-radius: 100px);
     }
 
