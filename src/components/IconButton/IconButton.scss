@@ -10,6 +10,10 @@
     background: color(color-button-primary_enable);
     border-radius: 10px;
 
+    .icon__button {
+      color: color(color-text-tertiary);
+    }
+
      &:active{
        background: color(color-button-primary_active);
      }
@@ -20,7 +24,7 @@
     @include border(solid, color(color-border-secondary_enable), 10px, 2px);
 
     .icon__button {
-      color: color(color-icon-tertiary);
+      color: color(color-icon-secondary);
     }
 
     &:active {
@@ -28,7 +32,7 @@
       @include border(solid, color(color-border-secondary_active), 10px, 2px);
 
       .icon__button {
-        color: color(color-icon-secondary);
+        color: color(color-icon-primary);
       }
     }
   }

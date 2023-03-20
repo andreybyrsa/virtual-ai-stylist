@@ -41,7 +41,7 @@
 
   &--secondary {
     #{$parent}__clothes-content {
-      background-color: color(color-button-secondary_enable);
+      background-color: color(color-background-dark);
       @include border(solid, color(color-border-secondary_enable), 20px, 3px);
 
       #{$parent}__text{
@@ -50,7 +50,7 @@
     }
 
     #{$parent}__links {
-      background-color: color(color-button-secondary_enable);
+      background-color: color(color-background-dark);
       @include border(solid, color(color-border-secondary_enable), (0 0 20px 20px), 3px);
     }
   }

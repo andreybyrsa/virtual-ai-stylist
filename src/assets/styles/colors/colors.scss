@@ -10,9 +10,9 @@ $colors: (
   "color-text-link": #107987,
 
   //? Icon colors
-  "color-icon-primary": #FFFFFF,
-  "color-icon-secondary": #02202B,
-  "color-icon-tertiary": #00E4FF,
+  "color-icon-primary": #02202B,
+  "color-icon-secondary": #00E4FF,
+  "color-icon-tertiary": #FFFFFF,
   "color-icon-correct": #2E994B,
   "color-icon-error": #FF0000,
 
@@ -27,10 +27,15 @@ $colors: (
 
   //? Border colors
   "color-border-primary_error": #FF0000,
+  "color-border-secondary_error": #FF0000,
+
+  "color-border-primary_enable": #264A5A,
+  "color-border-primary_active": #02202B,
+  "color-border-primary_disable": #7496A6,
 
   "color-border-secondary_enable": #00E4FF,
   "color-border-secondary_active": #02202B,
-  "color-border-secondary_disable": #00E4FF,
+  "color-border-secondary_disable": #7496A6,
 
   //? Input colors
   "color-input-primary": #8AA7BB,
@@ -49,7 +54,7 @@ $colors: (
   "color-background-primary": #C3CFD7,
   "color-background-secondary": #264A5A,
   "color-background-tertiary": #FFFFFF,
-  "color-background-dark": #02202B,
+  "color-background-dark": #052E3E,
   "color-background-dark_light": #5F8393,
   "color-background-light": #A5B0B7,
   "color-background-blue": #4D76A1,
