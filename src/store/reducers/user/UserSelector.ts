@@ -1,6 +1,6 @@
 import { RootState } from '@Store/index'
 
-function UserSelector() {
+const UserSelector = () => {
   return (state: RootState) => state.user.user
 }
 

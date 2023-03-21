@@ -39,13 +39,23 @@ function ProfilePage() {
     >
       <div className="profile-page__content">
         <div className="profile-page__content-profile">
-          <Image
-            className="profile-page__content-avatar"
-            width={70}
-            height={70}
-            imageSrc={`${user?.profilePic}`}
-            alt="avatar"
-          />
+          {`${user?.profilePic}` ? (
+            <Image
+              className="profile-page__content-avatar"
+              width={70}
+              height={70}
+              imageSrc={`${user?.profilePic}`}
+              alt="avatar"
+            />
+          ) : (
+            <Icon
+              className="profile-page__content-avatar"
+              iconName="avatar"
+              color="color-icon-secondary"
+              viewBox={140}
+              size={70}
+            />
+          )}
           <div>
             <Typography variant="title-t3-medium">Имя: {user?.userName}</Typography>
             <Typography variant="title-t3-medium">Телефон: {user?.phoneNumber}</Typography>
