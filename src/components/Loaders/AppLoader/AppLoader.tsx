@@ -34,7 +34,7 @@ function AppLoader({ className }: AppLoaderProps) {
         variant="title-t1-bold"
         color="color-text-secondary"
       >
-        Virtual AI Stylist
+        1
       </Typography>
     </div>
   )
